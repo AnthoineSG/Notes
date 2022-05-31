@@ -24,6 +24,9 @@ pwd
 # voir tout les fichier/dossier meme les cacher
 ls -a
 
+# voir la place dispo sur la machine
+df -h
+
 # voir le contenu du fichier
 cat <nom-du-fichier>
 
@@ -372,8 +375,113 @@ npm run develop
 
 ---
 
+## MongoDB
+
+Doc [ici](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
+
+MongoDB Compass MVP (trop bien trop simple trop totu)
+
+```bash
+# se connecter
+mongosh
+
+# voir toutes les db
+show dbs
+
+# entrer dans une db
+use "nom-db"
+
+# voir toutes les collection
+show collections
+
+# rename une collection
+db."nom-collection".renameCollection("new-nom-collextion")
+
+# trouver un document
+db."nom-collection".find()
+
+# trouver un document a un id
+db."nom-collection".find({ id: 20 })
+
+# trouver un document avec un morceau de nom 
+db."".find({ name: /exe/i })
+# ici renvoie par exemple le document avec name = "exemple"
+
+
+
+
+
+
+
+
+
+```
+
+---
+
+## Docker
+
+bien differencier image et conteneur
+lancer une image creera un nouveau conteneur
+supprimer un conteneur se supprimera pas l'image
+une image est unique mais peut etre dans plusieur conteneur
+
+```bash
+# voir toutes les images
+docker images
+
+# supprimer une image
+docker rmi "nom-de-l'image"
+
+# installer puis lancer une image
+docker run "nom-de-l'image"
+
+# installer puis lancer une image et la supprimer des quelle a fini
+docker run --rm "nom-de-l'image"
+
+# pour exécuter une commande dans l'image d'un conteneur
+docker run --rm ubuntu:latest cat /etc/-os-release
+
+# le flag "-d" pour exécuter les conteneur en tache de fond
+docker run --rm -d ubuntu:latest cat /etc/-os-release
+
+# on exécute un conteneur dans le background, avec le flag "i-", il est toujours allumé.
+docker run --rm -di ubuntu:latest /bin/bash
+
+# le flag `i` nous connecte à la machine, le flag `t` va permettre d'exécuter des commandes `bash`
+docker exec -it "nom-du-conteneur" bash
+
+# pour voir les conteneur en fonctionnement
+docker ps
+
+# pour voir les conteneur qui on ete cree
+docker ps -a
+
+# pour demarer un conteneur
+docker start "nom-conteneur"
+
+# pour arreter un conteneur
+docker stop "nom-conteneur"
+
+# pour suprimer un conteneur
+docker rm "conteneur-id"
+
+# recuperer tout les id des conteneur actif ou non
+docker ps -aq
+
+# pour suprimer tout les conteneur inactif
+docker rm $(docker ps -aq)
+
+# pour suprimer tout les conteneur actif ou non
+docker rm -f $(docker ps -aq)
+```
+
 ## React
 
 ```js
+
+
+
+
 
 ```
