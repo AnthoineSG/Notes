@@ -421,10 +421,13 @@ db."".find({ name: /exe/i })
 
 ## Docker
 
-bien differencier image et conteneur
-lancer une image creera un nouveau conteneur
-supprimer un conteneur se supprimera pas l'image
-une image est unique mais peut etre dans plusieur conteneur
+Bien differencier `image` et `conteneur`
+
+Lancer une `image` creera un nouveau `conteneur`
+
+Supprimer un `conteneur` se supprimera pas l'`image`
+
+Une `image` est unique mais peut etre dans plusieur `conteneur`
 
 ```bash
 # voir toutes les images
