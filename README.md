@@ -433,8 +433,14 @@ Une `image` est unique mais peut etre dans plusieur `conteneur`
 # voir toutes les images
 docker images
 
-# supprimer une image
-docker rmi "nom-de-l'image"
+# pour voir les conteneur en fonctionnement
+docker ps
+
+# pour voir les conteneur qui on ete cree
+docker ps -a
+
+# recuperer tout les id des conteneur actif ou non
+docker ps -aq
 
 # installer puis lancer une image
 docker run "nom-de-l'image"
@@ -442,7 +448,7 @@ docker run "nom-de-l'image"
 # installer puis lancer une image et la supprimer des quelle a fini
 docker run --rm "nom-de-l'image"
 
-# pour exécuter une commande dans l'image d'un conteneur
+# pour exécuter une commande dans un conteneur
 docker run --rm ubuntu:latest cat /etc/-os-release
 
 # le flag "-d" pour exécuter les conteneur en tache de fond
@@ -454,30 +460,63 @@ docker run --rm -di ubuntu:latest /bin/bash
 # le flag `i` nous connecte à la machine, le flag `t` va permettre d'exécuter des commandes `bash`
 docker exec -it "nom-du-conteneur" bash
 
-# pour voir les conteneur en fonctionnement
-docker ps
-
-# pour voir les conteneur qui on ete cree
-docker ps -a
-
 # pour demarer un conteneur
 docker start "nom-conteneur"
 
 # pour arreter un conteneur
 docker stop "nom-conteneur"
 
+# supprimer une image
+docker rmi "id-de-l'image"
+
 # pour suprimer un conteneur
 docker rm "conteneur-id"
-
-# recuperer tout les id des conteneur actif ou non
-docker ps -aq
 
 # pour suprimer tout les conteneur inactif
 docker rm $(docker ps -aq)
 
 # pour suprimer tout les conteneur actif ou non
 docker rm -f $(docker ps -aq)
+
+# pour effacer tout ce qui sert à rien (ça fait un reset)
+docker system prune
+
+# Contruire une image avec un tagname jsonserver et sans le cache, pour avoir une image fraiche
+docker build . --no-cache -t "nom-du-server"
+
+#Pour exécuter notre image, en exposant le port 3000 du conteneur au port 3000 de la machine hote. Le premier 3000 est le port de l hote.
+docker run --rm -p 3000:3000 "nom-du-server"
 ```
+
+### Sur un fichier `Dockfile`
+
+Ce fichier doit etre acompagner de fichier `.json` qui comprennent les donnée a export sur docker
+
+```docker
+# On installe une image et on la modifie pour créer notre image custom et la rendre dispo partout grace a docker
+
+# Cette image contient un OS avec nodejs et npm installés
+FROM node:latest
+
+# On indique le répertoire dans lequel nous allons travailler à l'intérieur du conteneur
+WORKDIR /home/server
+
+# On dit à notre conteneur d'installer json-server globalement
+RUN npm install -g json-server
+
+# On envoie les fichier `db.json` et `db-copy.json` sur le conteneur
+COPY db.json /home/server/db.json
+COPY db-copy.json /home/server/db-copy.json
+
+# une fois lancé le conteneur execute la commande ci-dessous
+# elle indique que le server sera sur les port 0.0.0.0 et qu'il envera ses données sur le port 3000
+ENTRYPOINT ["json-server", "--port", "3000" ,"--host", "0.0.0.0"]
+
+# le conteneur execute par default db.json
+# pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
+CMD ["db.json"]
+```
+
 
 ## React
 
