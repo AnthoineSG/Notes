@@ -6,9 +6,10 @@ Les app de dev que j'utilise sont:
 
 - VSCode
 - Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
-  - insomia tres bien pour les petite API sans trop de request
-  - postman bien adapter pour les plus gros projet
-- DBeaver
+  - Insomia tres bien pour les petite API sans trop de request
+  - Postman bien adapter pour les plus gros projet
+- DBeaver / PgAdmin4
+- MongoDB Compass
 
 ---
 
@@ -565,6 +566,8 @@ ENTRYPOINT ["json-server", "--port", "3000" ,"--host", "0.0.0.0"]
 # Pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
 CMD ["db.json"]
 ```
+
+---
 
 ## React
 
