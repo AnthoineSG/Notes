@@ -15,37 +15,37 @@ Les app de dev que j'utilise sont:
 ## Bash
 
 ```bash
-# se balader ans les dossier
+# Pour se balader dans les dossier
 cd / cd .. / cd <nom-du-dossier>
 
-# voir ou on est
+# Voir ou on ce situe
 pwd
 
-# voir tout les fichier/dossier meme les cacher
+# Voir tout les fichier/dossier meme les cacher
 ls -a
 
-# voir la place dispo sur la machine
+# Voir la place dispo sur la machine
 df -h
 
-# voir le contenu du fichier
+# Voir le contenu du fichier
 cat <nom-du-fichier>
 
-# modifier un fichier en ligne de commande
+# Modifier un fichier en ligne de commande
 sudo nano <nom-du-fichier>
 
-# cree un fichier
+# Cree un fichier
 touch <nom-du-fichier>
 
-# cree un dossier
+# Cree un dossier
 mkdir <nom-du-dossier>
 
-# recupere toutes les mise a jour disponible
+# Recupere toutes les mise a jour disponible
 sudo apt-get update
 
-# effectue les mise a jour
+# Effectue les mise a jour
 sudo apt-get upgrade
 
-# pour insaller une application
+# Pour insaller une application
 sudo apt-get install <nom-du-logiciel>
 ```
 
@@ -56,49 +56,49 @@ sudo apt-get install <nom-du-logiciel>
 La doc c'est [ici](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ```bash
-# ajoute un .git a un dossier
+# Ajoute un .git a un dossier
 git init
 
-# permet de recuperer un repo
+# Permet de recuperer un repo
 git clone key-ssh-du-remote
 
-# permet de voir les modif depuis le dernier commit
+# Permet de voir les modif depuis le dernier commit
 git status
 
-# permet de voir tout l'historique des commit
+# Permet de voir tout l'historique des commit
 git log
 
-# permet de recuperer les changement depuis le repo
+# Permet de recuperer les changement depuis le repo
 git pull
 
-# ajoute toute les modification
+# Ajoute toute les modification
 git add .
 
-# enveloppe les modification et donne un titre
+# Enveloppe les modification et donne un titre
 git commit-m "nom-du-commit"
 
-# envoie le commit sur la branche master
+# Envoie le commit sur la branche master
 git push
 
-# envoie le commit sur une nouvelle branche
+# Envoie le commit sur une nouvelle branche
 git push --set-upstream nom-new-branch
 
-# envoie une branche sur un remote precis
+# Envoie une branche sur un remote precis
 git push nom-remote nom-branch
 
-# permet de voir toute les branches et remote connecter a ce fichier
+# Permet de voir toute les branches et remote connecter a ce fichier
 git branch -a
 
-# cree une nouvelle branche et se place dessus
+# Cree une nouvelle branche et se place dessus
 git checkout nom-new-branch
 
-# permet de changer de branche
+# Permet de changer de branche
 git switch nom-branch
 
-# permet de voir toute les connection du dossier
+# Permet de voir toute les connection du dossier
 git remote -v
 
-# premet d'ajouter une connection
+# Premet d'ajouter une connection
 git remote add nom-remote key-ssh-du-remote
 ```
 
@@ -109,16 +109,16 @@ git remote add nom-remote key-ssh-du-remote
 Application qui permet d'afficher l'architecture des fichier/dossier
 
 ```bash
-# pour intaller tree
+# Pour intaller tree
 apt-get install tree
 
-# pour afficher l'arborescence
+# Pour afficher l'arborescence
 tree
 
-# pour ignorer les node-module
+# Pour ignorer les node-module
 tree -I node_modules
 
-# exemple pour ce repo
+# Exemple pour ce repo
 .
 └── README.md
 ```
@@ -155,9 +155,9 @@ Plus d'info [ici](https://htmlcheatsheet.com/)
                     <br>
                     <strong>BOLD</strong>
                     <em>ITALIC</em>
+                    <img src="#" alt="description">
 
                     <iframe src="#" width="200" height="200">TRUC A IMPRIMER</iframe>
-                    <img src="#" alt="description"> <!-- IMAGE -->
 
                     <form action="/" method="post">
                         <fieldset>
@@ -190,7 +190,7 @@ Plus d'info [ici](https://htmlcheatsheet.com/)
 Plus d'info [ici](https://www.reveillere.fr/M2WEB/sheets/css.pdf) ou [la](https://htmlcheatsheet.com/css/)
 
 ```css
-/* selectionner une balise */
+/* Selectionner une balise */
 body {
     --color-red: red;
 
@@ -200,19 +200,19 @@ body {
     justify-content: space-around;
 }
 
-/* selection par une class */
+/* Selection par une class */
 .class {
     width: 1vw;
     height: 1vh;
     font-size: 1rem;
 }
 
-/* selection par un id */
+/* Selection par un id */
 #id {
     color: var(--color-red);
 }
 
-/* selection d'un input avec une valeur precise */
+/* Selection d'un input avec une valeur precise */
 input[value="toto"] {
     background-color: antiquewhite;
 }
@@ -294,16 +294,16 @@ Possibiliter d'ajouter des modules de facon tres simple aussi via le terminal
 La doc c'est [ici](https://www.npmjs.com/)
 
 ```bash
-# ajoute un fichier pakage.json qui permet de rendre les modules disponible dans l'application
+# Ajoute un fichier pakage.json qui permet de rendre les modules disponible dans l'application
 npm init -y
 
-# permet d'installer des module
+# Permet d'installer des module
 npm i nom-du-module
 
-# intalle un module dispo uniquement lors du developpement de l'app
+# Intalle un module dispo uniquement lors du developpement de l'app
 npm i -D nom-du-module
 
-# desinstalle un module
+# Desinstalle un module
 npm uninstall nom-du-module
 ```
 
@@ -313,41 +313,43 @@ npm uninstall nom-du-module
 
 Beaucoup d'autre option sont dispo [ici](https://docs.postgresql.fr/11/)
 
+> Un "SGBD" permet d'acceder a une "BDD" qui contient des "Tables" "relationnel ou non" qui contiennent des "Enregistrement"
+
 ```sql
-# se connecter a psql
+# Se connecter a psql
 sudo -u postgres psql
 
-# liste les BDD
+# Liste les BDD
 \l
 
-# liste les roles
+# Liste les roles
 \du
 
-# cree un nouveau role
+# Cree un nouveau role
 CREATE ROLE "nom-role" WITH LOGIN PASSWORD 'mdp';
 
-# cree une nouvelle BDD
+# Cree une nouvelle BDD
 CREATE DATABASE "nom-DB" OWNER "nom-role";
 
-# se connecter a une BDD avec le role responsable
+# Se connecter a une BDD avec le role responsable
 \c "nom-database" "nom-role"
 
-# liste les tables
+# Liste les tables
 \dt
 
-# liste les relations
+# Liste les relations
 \d
 
-# cree une table
+# Cree une table
 CREATE TABLE IF NOT EXISTS "nom-table" (
     "nom-champ" OPTION (INT/VARCHAR/...),
 ); 
 
-# inserer des enregistrement
+# Inserer des enregistrement
 INSERT INTO "nom-table" ("nom-champs-1", "nom-champs-2")
 VALUES ('nom-value-1', 'nom-value-2');
 
-# chercher un enregistrement
+# Chercher un enregistrement
 SELECT * FROM "nom-table";
 
 # Joindre 2 table et recupere uniquement les data lier
@@ -362,10 +364,10 @@ SELECT * FROM "table-gauche" RIGHT JOIN "table-droite" ON "table-gauche"."table-
 # Recupere toutes les data des 2 tables meme les data non lier
 SELECT * FROM "table-gauche" FULL OUTER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
-# supprimer un enregistrement
+# Supprimer un enregistrement
 DELETE FROM "nom-table" * WHERE "id" = 'enregistrement-a-supprimer';
 
-# supprimer une table
+# Supprimer une table
 DROP TABLE IF EXISTS "nom-table";
 ```
 
@@ -375,42 +377,74 @@ DROP TABLE IF EXISTS "nom-table";
 
 Doc [ici](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
 
-MongoDB Compass MVP (trop bien trop simple trop totu)
+Pour les aggregations [ici](https://imgur.com/a/8hnrdOI)
+
+MongoDB Compass MVP (trop bien, trop simple, trop totu)
+
+> Un "SGBD" permet d'acceder a une "BDD" qui a des "collections" avec des "documents"
 
 ```bash
-# se connecter
+# Se connecter
 mongosh
 
-# voir toutes les db
+# Voir toutes les db
 show dbs
 
-# entrer dans une db
+# Entrer dans une db
 use "nom-db"
 
-# voir toutes les collection
+# Voir toutes les collection
 show collections
 
-# rename une collection
+# Rename une collection
 db."nom-collection".renameCollection("new-nom-collextion")
 
-# trouver un document
+# Trouver un document
 db."nom-collection".find()
 
-# trouver un document a un id
+# Trouver un document a un id
 db."nom-collection".find({ id: 20 })
 
-# trouver un document avec un morceau de nom 
+# Trouver un document avec un morceau de nom 
 db."nom-collection".find({ name: /exe/i })
-# ici renvoie par exemple le document avec name = "exemple"
+# Ici renvoie par exemple le document avec name = "exemple"
 
-
-
-
-
-
-
-
-
+# Pour les aggregation (ALED)
+db."nom-collection".aggregate([
+    {
+        # $match sert a rechercher des documents qui corresponde
+        '$match': {
+            # On recupere tout les documents qui on un type "Grass"
+            'type': 'Grass',
+            # On peut aussi recuperer plusieur valeur
+            "type": {$in: ["Grass", "Poison"]},
+            # On recupere tout les document avec un nom qui contient les lettres "as"
+            'name': new RegExp('as', 'i')
+        }
+    },
+    {
+        # $group permet de regrouper les valeur sortante
+        '$group': {
+            # On recupere l'id avec les value name ex = { _id: "toto" }
+            '_id': '$name',
+            # On recupere une valeur et on calcule sa moyenne ex = { spaw_chanve: 2 }
+            'spawn_chance': {
+                '$avg': '$spawn_chance'
+            }
+        }
+    },
+    {
+        # $sort sert a trier les documents
+        '$sort': {
+            # Ici on trie de façon décroissant ( inverse = 1 )
+            'spawn_chance': -1
+        }
+    },
+    {
+        # Limite simplement le nombre de document en sortie
+        '$limit': 10
+    }
+])
 ```
 
 ---
@@ -420,12 +454,14 @@ db."nom-collection".find({ name: /exe/i })
 La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
 
 ```bash
-# cree un role dans la BDD
+# Cree un role dans la BDD
 
+# Commande pour cree un nouveau projet
 npx create-strapi-app@latest "nom-du-projet"
 
-# suivre les idication dans le terminal
+# Suivre les idication dans le terminal
 
+# Demarer le projet
 npm run develop
 ```
 
@@ -442,61 +478,62 @@ Supprimer un `conteneur` se supprimera pas l'`image`
 Une `image` est unique mais peut etre dans plusieur `conteneur`
 
 ```bash
-# voir toutes les images
+# Voir toutes les images
 docker images
 
-# pour voir les conteneur en fonctionnement
+# Pour voir les conteneur en fonctionnement
 docker ps
 
-# pour voir les conteneur qui on ete cree
+# Pour voir les conteneur qui on ete cree
 docker ps -a
 
-# recuperer tout les id des conteneur actif ou non
+# Recuperer tout les id des conteneur actif ou non
 docker ps -aq
 
-# installer puis lancer une image
+# Installer puis lancer une image
 docker run "nom-de-l'image"
 
-# installer puis lancer une image et la supprimer des quelle a fini
+# Installer puis lancer une image et la supprimer des quelle a fini
 docker run --rm "nom-de-l'image"
 
-# pour exécuter une commande dans un conteneur
+# Pour exécuter une commande dans un conteneur
 docker run --rm ubuntu:latest cat /etc/-os-release
 
-# le flag "-d" pour exécuter les conteneur en tache de fond
+# Le flag "-d" pour exécuter les conteneur en tache de fond
 docker run --rm -d ubuntu:latest cat /etc/-os-release
 
-# on exécute un conteneur dans le background, avec le flag "i-", il est toujours allumé.
+# On exécute un conteneur dans le background, avec le flag "i-", il est toujours allumé.
 docker run --rm -di ubuntu:latest /bin/bash
 
-# le flag `i` nous connecte à la machine, le flag `t` va permettre d'exécuter des commandes `bash`
+# Le flag `i` nous connecte à la machine, le flag `t` va permettre d'exécuter des commandes `bash`
 docker exec -it "nom-du-conteneur" bash
 
-# pour demarer un conteneur
+# Pour demarer un conteneur
 docker start "nom-conteneur"
 
-# pour arreter un conteneur
+# Pour arreter un conteneur
 docker stop "nom-conteneur"
 
-# supprimer une image
+# Supprimer une image
 docker rmi "id-de-l'image"
 
-# pour suprimer un conteneur
+# Pour suprimer un conteneur
 docker rm "conteneur-id"
 
-# pour suprimer tout les conteneur inactif
+# Pour suprimer tout les conteneur inactif
 docker rm $(docker ps -aq)
 
-# pour suprimer tout les conteneur actif ou non
+# Pour suprimer tout les conteneur actif ou non
 docker rm -f $(docker ps -aq)
 
-# pour effacer tout ce qui sert à rien (ça fait un reset)
+# Pour effacer tout ce qui sert à rien (ça fait un reset)
 docker system prune
 
 # Contruire une image avec un tagname jsonserver et sans le cache, pour avoir une image fraiche
 docker build . --no-cache -t "nom-du-server"
 
-#Pour exécuter notre image, en exposant le port 3000 du conteneur au port 3000 de la machine hote. Le premier 3000 est le port de l hote.
+# Pour exécuter notre image, en exposant le port 3000 du conteneur au port 3000 de la VM hote.
+# Le premier 3000 est le port de l'hote.
 docker run --rm -p 3000:3000 "nom-du-server"
 ```
 
@@ -520,12 +557,12 @@ RUN npm install -g json-server
 COPY db.json /home/server/db.json
 COPY db-copy.json /home/server/db-copy.json
 
-# une fois lancé le conteneur execute la commande ci-dessous
-# elle indique que le server sera sur les port 0.0.0.0 et qu'il envera ses données sur le port 3000
+# Une fois lancé le conteneur execute la commande ci-dessous
+# Elle indique que le server sera sur les port 0.0.0.0 et qu'il envera ses données sur le port 3000
 ENTRYPOINT ["json-server", "--port", "3000" ,"--host", "0.0.0.0"]
 
-# le conteneur execute par default db.json
-# pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
+# Le conteneur execute par default db.json
+# Pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
 CMD ["db.json"]
 ```
 
