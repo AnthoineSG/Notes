@@ -344,33 +344,29 @@ CREATE TABLE IF NOT EXISTS "nom-table" (
 ); 
 
 # inserer des enregistrement
-INSERT INTO "nom-table" ("nom-champs", "nom-champs")
-VALUES ('nom-value', 'nom-value');
+INSERT INTO "nom-table" ("nom-champs-1", "nom-champs-2")
+VALUES ('nom-value-1', 'nom-value-2');
 
 # chercher un enregistrement
 SELECT * FROM "nom-table";
+
+# Joindre 2 table et recupere uniquement les data lier
+SELECT * FROM "table-gauche" INNER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
+
+# Joindre 2 table avec toutes les data de la table de gauche relier a la table de droite
+SELECT * FROM "table-gauche" LEFT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
+
+# Meme chose mais recupere toutes les data de la table droite
+SELECT * FROM "table-gauche" RIGHT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
+
+# Recupere toutes les data des 2 tables meme les data non lier
+SELECT * FROM "table-gauche" FULL OUTER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
 # supprimer un enregistrement
 DELETE FROM "nom-table" * WHERE "id" = 'enregistrement-a-supprimer';
 
 # supprimer une table
 DROP TABLE IF EXISTS "nom-table";
-```
-
----
-
-## Strapi
-
-La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
-
-```bash
-# cree un role dans la BDD
-
-npx create-strapi-app@latest "nom-du-projet"
-
-# suivre les idication dans le terminal
-
-npm run develop
 ```
 
 ---
@@ -404,7 +400,7 @@ db."nom-collection".find()
 db."nom-collection".find({ id: 20 })
 
 # trouver un document avec un morceau de nom 
-db."".find({ name: /exe/i })
+db."nom-collection".find({ name: /exe/i })
 # ici renvoie par exemple le document avec name = "exemple"
 
 
@@ -415,6 +411,22 @@ db."".find({ name: /exe/i })
 
 
 
+```
+
+---
+
+## Strapi
+
+La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
+
+```bash
+# cree un role dans la BDD
+
+npx create-strapi-app@latest "nom-du-projet"
+
+# suivre les idication dans le terminal
+
+npm run develop
 ```
 
 ---
