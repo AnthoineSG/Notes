@@ -1,6 +1,6 @@
 # Notes
 
-Ce document est realiser pour ***linux*** et ***Windows***
+Ce document est realiser pour ***Linux*** et ***Windows***
 
 - **Environement**
     - [VSCode](#vscode)
@@ -17,7 +17,7 @@ Ce document est realiser pour ***linux*** et ***Windows***
 - **Back**
     - [NodeJS](#nodejs)
         - Express
-    - [Ejs](#ejs)
+        - [Ejs](#ejs)
     - [Sqitch](#sqitch)
     - [Strapi](#strapi)
     - **BDD**
