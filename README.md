@@ -1,15 +1,50 @@
 # Notes
 
-Ce document est realiser via ***linux***
+Ce document est realiser pour ***linux*** et ***Windows***
 
-Les app de dev que j'utilise sont:
+- **Environement**
+    - [VSCode](#vscode)
+    - [Bash](#bash)
+    - [Git](#git)
+    - [Docker](#docker)
+    - [Regex](#html)
+    - [Tree](#tree)
+- **Front**
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JSVanilla](#js-vanilla)
+    - [React](#html)
+- **Back**
+    - [NodeJS](#html)
+        - Express
+    - [Ejs](#ejs)
+    - [Sqitch](#html)
+    - [Strapi](#html)
+        - Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
+            - Insomia tres bien pour les petite API sans trop de request
+            - Postman bien adapter pour les plus gros projet
+    - **BDD**
+        - [PostgresQL](#html)
+            - PGadmin4
+        - [MongoDB](#html)
+            - MongoDB Compass
 
-- VSCode
-- Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
-  - Insomia tres bien pour les petite API sans trop de request
-  - Postman bien adapter pour les plus gros projet
-- DBeaver / PgAdmin4
-- MongoDB Compass
+---
+
+## VSCode
+
+Extention :
+
+- Better Comments
+- Indent-rainbow
+- VSCode-Icons
+- Markdown Preview Github
+- Code Runner
+- Database Client
+- Docker
+- Live Server
+- Live Share
+- GitLens
 
 ---
 
@@ -317,59 +352,74 @@ Beaucoup d'autre option sont dispo [ici](https://docs.postgresql.fr/11/)
 > Un "SGBD" permet d'acceder a une "BDD" qui contient des "Tables" "relationnel ou non" qui contiennent des "Enregistrement"
 
 ```sql
-# Se connecter a psql
+-- Se connecter a psql
 sudo -u postgres psql
 
-# Liste les BDD
+-- Liste les BDD
 \l
 
-# Liste les roles
+-- Liste les roles
 \du
 
-# Cree un nouveau role
+-- Cree un nouveau role
 CREATE ROLE "nom-role" WITH LOGIN PASSWORD 'mdp';
 
-# Cree une nouvelle BDD
+-- Cree une nouvelle BDD
 CREATE DATABASE "nom-DB" OWNER "nom-role";
 
-# Se connecter a une BDD avec le role responsable
+-- Se connecter a une BDD avec le role responsable
 \c "nom-database" "nom-role"
 
-# Liste les tables
+-- Liste les tables
 \dt
 
-# Liste les relations
+-- Liste les relations
 \d
 
-# Cree une table
+-- Cree une table
 CREATE TABLE IF NOT EXISTS "nom-table" (
     "nom-champ" OPTION (INT/VARCHAR/...),
 ); 
 
-# Inserer des enregistrement
+-- Inserer des enregistrement
 INSERT INTO "nom-table" ("nom-champs-1", "nom-champs-2")
 VALUES ('nom-value-1', 'nom-value-2');
 
-# Chercher un enregistrement
+-- Chercher un enregistrement
 SELECT * FROM "nom-table";
 
-# Joindre 2 table et recupere uniquement les data lier
+-- Joindre 2 table et recupere uniquement les data lier
 SELECT * FROM "table-gauche" INNER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
-# Joindre 2 table avec toutes les data de la table de gauche relier a la table de droite
+-- Joindre 2 table avec toutes les data de la table de gauche relier a la table de droite
 SELECT * FROM "table-gauche" LEFT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
-# Meme chose mais recupere toutes les data de la table droite
+-- Meme chose mais recupere toutes les data de la table droite
 SELECT * FROM "table-gauche" RIGHT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
-# Recupere toutes les data des 2 tables meme les data non lier
+-- Recupere toutes les data des 2 tables meme les data non lier
 SELECT * FROM "table-gauche" FULL OUTER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
-# Supprimer un enregistrement
+-- Supprimer un enregistrement
 DELETE FROM "nom-table" * WHERE "id" = 'enregistrement-a-supprimer';
 
-# Supprimer une table
+-- Supprimer une table
 DROP TABLE IF EXISTS "nom-table";
+
+-- Crée un type personaliser utilisable partout dans la DB
+CREATE TYPE "article" AS (
+    "page" TEXT,
+    "numero" INT
+);
+
+-- Crée un nouveau domaine pour verifier les info qui rentre en BDD
+CREATE DOMAIN nbr_supp_zero AS INT CHECK ( VALUE > 0 );
+CREATE DOMAIN text_ok AS TEXT CHECK ( VALUE ~ '^\w{5}$' );
+-- Ce domain est disponible partout dans la DB
+-- On peut donc faire 
+ALTER TABLE "tutu" ADD COLUMN "toto" text_ok NOT NULL;
+
+
 ```
 
 ---
@@ -565,6 +615,176 @@ ENTRYPOINT ["json-server", "--port", "3000" ,"--host", "0.0.0.0"]
 # Le conteneur execute par default db.json
 # Pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
 CMD ["db.json"]
+```
+
+---
+
+## Sqitch
+
+> Install sur windows (horible) => install `chocolatey` => install `stawberry perl` => install `sqitch`
+
+> Install sur linux `sudo apt-get install sqitch`
+
+Sqitch sert a `"simplifier"` la mise en place des BDD en fonction du déploiement
+
+Il permet de lancé des script simple pour tout installer en BDD
+
+```bash
+# Pour installer sqitch dans un projet sous PSQL
+sqitch init "nom-du-projet" --engine pg
+# Cette ligne crée plusieur dossier et et fichier vide
+
+# Pour ajouter une version 
+sqitch add "nom-version" -n "description de la version"
+# Cette ligne crée des fichier a remplire prioriser les noms 01-02-03-...
+
+# Perso je prefere crée un fichier supplementaire ex: deploy.sh pour lancer mon script
+export PGUSER="user-en-BDD"
+export PGPASSWORD="MDP-de-la-BDD"
+
+sqitch deploy db:pg:"nom-BDD"
+# Ou aussi => sqitch deploy db:pg:"nom-BDD" "nom-version"
+# Deploy est a changer en fonction de l'action voulu deploy/revert/verify
+```
+
+---
+
+## REGEX
+
+Outils simpas pour ecrire des regex [ici](https://regex101.com/)
+
+La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+
+```js
+// Exemple pour verifier une plaque d'immatriculation française
+'/^((?!(SS|WW))[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})\-((?!000)\d{3})\-((?!SS)[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})$/'
+
+// Pour declarer une regex
+'^ $'
+
+// Pour interdire quelque chose
+'(?!k)' // Interdit la lettre k en minuscule
+'(?!(k|L))' // Interdit la lettre k minuscule ou la lettre L majuscule
+
+// Pour interdire plusieur choses
+'[^Abc!§]'
+
+// Pour forcer un caractere
+'\-'
+'\.'
+
+// Pour limiter la chaine de caractere
+'{2,3}' // Cette chaine de caractere aura 2 ou 3 carac
+'a*' // Donne rien ou aaaaaaaaaaaaaaaaa
+'a+' // Donne un a ou aaaaaaaaaaaaaaaaa
+'a?' // Donne un a ou rien
+'.' // Accepte autant de caracter possible
+
+// Pour regrouper des element (organisation)
+'((?!b)[a-d]{3})' // = acd
+
+// Pour regrouper tout les caractere
+'[a-z]' // = a, b, c, ... , z
+'[A-Z]' // = A, B, C, ... , Z
+'[0-9]' // = 0, 1, 2, ... , 9
+'\w' // = [a-zA-Z0-9_]
+'\d' // = [0-9]
+```
+
+---
+
+## Ejs
+
+Ejs est utiliser pour les application monolithique, il est simple a utiliser mais pas très ergonomique
+
+La doc [ici](https://ejs.co/#docs)
+
+```html
+<!-- Pour afficher une variable -->
+<%= nom-varable %>
+
+<!-- Pour afficher un partial ou un component -->
+<%- include("path/..ejs") %>
+
+<!-- Boucler sur un tableau -->
+<% array.forEach(element => { %>
+    <%= element %>
+<% }); %>
+
+<!-- Pour acceder a un objet -->
+<%= objet.key %>
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
+```
+
+---
+
+## React
+
+```js
+
+
+
+
+
 ```
 
 ---
