@@ -7,26 +7,23 @@ Ce document est realiser pour ***linux*** et ***Windows***
     - [Bash](#bash)
     - [Git](#git)
     - [Docker](#docker)
-    - [Regex](#html)
+    - [Regex](#regex)
     - [Tree](#tree)
 - **Front**
     - [HTML](#html)
     - [CSS](#css)
     - [JSVanilla](#js-vanilla)
-    - [React](#html)
+    - [React](#react)
 - **Back**
-    - [NodeJS](#html)
+    - [NodeJS](#nodejs)
         - Express
     - [Ejs](#ejs)
-    - [Sqitch](#html)
-    - [Strapi](#html)
-        - Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
-            - Insomia tres bien pour les petite API sans trop de request
-            - Postman bien adapter pour les plus gros projet
+    - [Sqitch](#sqitch)
+    - [Strapi](#strapi)
     - **BDD**
-        - [PostgresQL](#html)
+        - [PostgresQL](#poqtgresql)
             - PGadmin4
-        - [MongoDB](#html)
+        - [MongoDB](#mongodb)
             - MongoDB Compass
 
 ---
@@ -345,7 +342,7 @@ npm uninstall nom-du-module
 
 ---
 
-## PSQL
+## PoqtgreSQL
 
 Beaucoup d'autre option sont dispo [ici](https://docs.postgresql.fr/11/)
 
@@ -503,6 +500,11 @@ db."nom-collection".aggregate([
 ## Strapi
 
 La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
+
+Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
+- Insomia tres bien pour les petite API sans trop de request
+- Postman bien adapter pour les plus gros projet
+
 
 ```bash
 # Cree un role dans la BDD
