@@ -279,3 +279,23 @@ La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions
 ```
 
 ---
+
+## TypeScript
+
+Doc [ici](https://www.typescriptlang.org/docs/)
+
+```js
+
+```
+
+---
+
+## Eslint
+
+Doc [ici](https://eslint.org/demo)
+
+```js
+
+```
+
+---
