@@ -224,7 +224,7 @@ Ou dans le `package.json`
 
 ---
 
-## 
+## Session
 
 ```js
 
