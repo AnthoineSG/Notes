@@ -65,6 +65,8 @@ Exemple pour une application bien structurer
         └── app
             ├── controllers
             │   └── index.js
+            ├── services
+            │   └── index.js
             ├── models
             │   ├── index.js
             │   └── config
