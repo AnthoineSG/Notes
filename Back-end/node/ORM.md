@@ -1,5 +1,9 @@
 # ORM
 
+Les ORM sont tres pratique mais demande beaucoups de resources
+
+Il vaut mieux les utiliser sur des petites application
+
 ## Sequelize
 
 C'est un ORM (Mapping objet-relationnel), en gros Sequelize s'occupe de crée lui meme les requete
@@ -120,6 +124,8 @@ module.exports = { getAllProduct, };
 
 ## Mongoose
 
+Mongoose est un ORM qui utilise une base de donnée MongoDB, il marche comme `sequelize` et consomme tout autant
+
 Doc [ici](https://mongoosejs.com/docs/guide.html)
 
 ```bash
@@ -130,18 +136,36 @@ Pour la connection avec mongoDB
 
 ```js
 mongoose.connect('mongodb://localhost:27017/nom-BDD');
-
-
 ```
 
+Crée un model
+
 ```js
+const mongoose = require("mongoose");
 
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+});
 
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
 ```
 
+Pour requeter
+
 ```js
-
-
+app.get("/users", async (req, res) => {
+    const users = await userModel.find({});
+    try {
+        res.send(users);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 ```
 
 ---

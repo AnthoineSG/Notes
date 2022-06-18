@@ -14,6 +14,120 @@ Extention :
 - Live Server
 - Live Share
 - GitLens
+- Turbo console log
+
+---
+
+## Architecture
+
+Exemple pour une application bien structurer
+
+```bash
+.
+├── README.md
+├── .gitignore
+├── .eslintrc
+├── client
+│   ├── package.json
+│   ├── README.md
+│   ├── docs
+│   └── public
+│      ├── images
+│      └── src
+│           ├── css
+│           │   ├── reset.css
+│           │   └── styles.css
+│           ├── html
+│           │   └── home.html
+│           └── js
+│               └── main.js
+└── server
+    ├── package.json
+    ├── .env
+    ├── .env.exemple
+    ├── data
+    │   ├── MCD.md
+    │   ├── MLD.md
+    │   ├── MPD.md
+    │   ├── tables.sql
+    │   ├── data.sql
+    │   └── sqitch
+    ├── docs
+    ├── logs
+    │   └── 2022-logs.txt
+    └── api
+        ├── tests
+        ├── public
+        │   ├── css
+        │   ├── html
+        │   └── js
+        ├── index.js
+        └── app
+            ├── controllers
+            │   └── index.js
+            ├── models
+            │   ├── index.js
+            │   └── config
+            │       └── dbconnect.js
+            ├── middleware
+            │   ├── errors
+            │   │   ├── 404.js
+            │   │   └── 500.js
+            │   ├── helpers
+            │   │   └── loggers.js
+            │   ├── validation
+            │   │   └── schemas
+            │   └── errorHandling.js
+            └── route
+                └── index.js
+```
+
+Exemple pour une application monolithique
+
+```bash
+.
+├── package.json
+├── .env
+├── .env.exemple
+├── .eslintrc
+├── data
+│   ├── MCD.md
+│   ├── MLD.md
+│   ├── MPD.md
+│   ├── tables.sql
+│   ├── data.sql
+│   └── sqitch
+├── docs
+├── logs
+├── tests
+├── index.js
+└── app
+    ├── controllers
+    │   └── index.js
+    ├── models
+    │   ├── index.js
+    │   └── config
+    │       └── dbconnect.js
+    ├── views
+    │   ├── components
+    │   │   └── nav.ejs
+    │   ├── errors
+    │   │   └── 404.pug
+    │   ├── partial
+    │   │   └── header.pug
+    │   └── index.html
+    ├── middleware
+    │   ├── errors
+    │   │   ├── 404.js
+    │   │   └── 500.js
+    │   ├── helpers
+    │   │   └── loggers.js
+    │   ├── validation
+    │   │   └── schemas
+    │   └── errorHandling.js
+    └── route
+        └── index.js
+```
 
 ---
 
@@ -111,7 +225,7 @@ git remote add nom-remote key-ssh-du-remote
 
 ## Tree
 
-Application qui permet d'afficher l'architecture des fichier/dossier
+Application **Linux** qui permet d'afficher l'architecture des fichier/dossier
 
 ```bash
 # Pour intaller tree
@@ -280,22 +394,164 @@ La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions
 
 ---
 
-## TypeScript
+## Eslint
 
-Doc [ici](https://www.typescriptlang.org/docs/)
+Eslint permet d'analiser le code ecrit et de coriger les potentiel erreurs de syntaxe
 
-```js
+Doc [ici](https://eslint.org/demo)
 
+Pour l'installer en global sur sa machine 
+
+```bash
+npm i -g eslint
+```
+
+Installer l'extension vscode eslint
+
+Pour un fichier config de base
+
+```json
+{
+    "extends": "eslint:recommended",
+
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "camelcase": "error",
+        "no-var": "error",
+        "no-multi-spaces": "error",
+        "no-trailing-spaces": "error"
+    }
+}
 ```
 
 ---
 
-## Eslint
+## TypeScript
 
-Doc [ici](https://eslint.org/demo)
+`TypeScript` est une version de `javaScript` typer
+
+Les navigateur ne lise pas Ts il faut donc compiler ses fichier pour les transformer en Js
+
+Doc [ici](https://www.typescriptlang.org/docs/)
+
+### TypeScript necessite une configuration pour etre utiliser
+
+Il fait un `package.json` specifique
+
+```json
+{
+    "scripts": {
+        "build": "tsc", // npm run build pour lancer la compilation
+        "start": "node dist/index.js", // npm start pour demarer le server en déploiement
+        "dev": "nodemon ./index.ts" // npm run dev nodemon compile ts sans passer par build
+    },
+    "dependencies": {
+        "express": "^4.18.1",
+        "typescript": "^4.7.2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.27.0",
+        "@typescript-eslint/parser": "^5.27.0",
+        "@types/express": "^4.17.13",
+        "nodemon": "^2.0.16",
+        "ts-node": "^10.8.0"
+    }
+}
+```
+
+Un `.eslint.json` qui lit TypeScript
+
+```json
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "@typescript-eslint/indent": ["error", 4],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "no-multi-spaces": "error",
+        "no-trailing-spaces": "error"
+    }
+}
+```
+
+Un fichier `tsconfig.json` qui permet la compilation dest fichier ts en js
+
+```json
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "dist", // les fichier compiler seront mis dans un dossier "dist"
+        "sourceMap": true
+    },
+    "files": [
+        "./index.ts", // list des fichier ts a compiler
+        "./app/router.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
+```
+
+Exemple pour un server de base
 
 ```js
+import * as express from "express";
 
+const app = express();
+
+
+app.get("/", (req, res) => { 
+
+    interface ReceivedMessage {
+        content: string;
+        pseudo: string;
+    }
+
+    async function saveMessage(message: ReceivedMessage) {
+        const savedMessage = message;
+        console.log("chat", savedMessage.content);
+    }
+
+    saveMessage({ content: "to", pseudo: "to" });
+
+
+    res.send("trop hype");
+});
+
+
+const PORT = process.env.PORT ?? 8000;
+app.listen(PORT, () => {
+    console.log(`server start on http://localhost:${PORT}`);
+});
 ```
 
 ---

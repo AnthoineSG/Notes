@@ -5,14 +5,16 @@ Ce document est realiser pour ***Linux*** et ***Windows***
 ---
 
 ## Environement
+
 - [VSCode](./Environement/env.md#vscode)
+- [Architecture](./Environement/env.md#architecture)
 - [Bash](./Environement/env.md#bash)
 - [Git](./Environement/env.md#git)
 - [Tree](./Environement/env.md#tree)
 - [Docker](./Environement/env.md#docker)
 - [Regex](./Environement/env.md#regex)
-- [TypeScript](./Environement/env.md#typescript)
 - [Eslint](./Environement/env.md#eslint)
+- [TypeScript](./Environement/env.md#typescript)
 
 ---
 
@@ -30,7 +32,6 @@ Ce document est realiser pour ***Linux*** et ***Windows***
         - [JSDoc](./Back-end/node/modulesDeBase.md#jsdoc)
         - [Swagger](./Back-end/node/modulesDeBase.md#swagger)
         - [Debug](./Back-end/node/modulesDeBase.md#debug)
-        - [Jest](./Back-end/node/modulesDeBase.md#jest)
     - **Module pour DB**
         - [PG](./Back-end/node/modulesDB.md#pg)
         - [Mongodb](./Back-end/node/modulesDB.md#mongodb)
@@ -41,6 +42,7 @@ Ce document est realiser pour ***Linux*** et ***Windows***
         - [Joi](./Back-end/node/autres.md#joi)
         - [Bcrypt](./Back-end/node/autres.md#bcrypt)
         - [Dayjs](./Back-end/node/autres.md#dayjs)
+        - [Jest](./Back-end/node/modulesDeBase.md#jest)
     - **BDD**
         - [PostgresQL](./Back-end/BDD.md#poqtgresql)
             - PGadmin4

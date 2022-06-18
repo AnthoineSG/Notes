@@ -1,4 +1,4 @@
-# NodeJS
+# NodeJs Modules
 
 ## NodeJS
 
@@ -131,6 +131,8 @@ function toto(req, res) {
 
 Outils qui permet en quelques lignes de crée un back jolie et bien en forme (~ strapi mais c'est toi qui fait tout)
 
+:warning: Attention il y a beaucoup de version npm de swagger, il faut bien faire attention a la version que l'on installe : `express-jsdoc-swagger`
+
 C'est une [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification), la doc c'est [ici](https://github.com/brikev/express-jsdoc-swagger) ou [la](https://swagger.io/specification/)
 
 Le rendu final est plus ou moins comme [ça](https://petstore.swagger.io/)
@@ -168,11 +170,40 @@ const options = {
 expressJSDocSwagger(app)(options);
 ```
 
+Dans le router crée une JSDoc adapter a swagger
+
+```js
+/**
+* Une categories
+* @typedef {Object} Categories
+* @property {number} id - id
+* @property {string} category - Description d'une categorie
+*/
+
+/**
+* GET /api/categories
+* @summary Get all categories
+* @tags GET
+* @return {[Category]} 200 - success response - application/json
+* @return {object} 400 - Bad request response
+*/
+router.get("/categories", categoriesController.getAll);
+
+/**
+ * POST /api/categories/{id}
+ * @summary Add one catégorie in DB
+ * @tags POST
+ * @return {Categories} 200 - success response - application/json
+ * @return {object} 400 - Bad request response
+ */
+router.post("/categories/:id", categoriesController.addOne);
+```
+
 ---
 
 ## Debug
 
-Outils permetant de BUFFER les console.log
+Outils permetant de `BUFFER` les console.log
 
 Permet de personnaliser ses log, d'avoir des infos supplementaire, d'avoir des couleurs, ...
 
@@ -183,7 +214,7 @@ Doc [ici](https://www.npmjs.com/package/debug)
 npm i debug
 ```
 
-Dans un fichier random : 
+Dans un fichier random :
 
 ```js
 const debug = require("debug")("nomFichier");
@@ -210,16 +241,6 @@ Ou dans le `package.json`
 },
 
 // npm run dev = toto hello +0ms
-```
-
----
-
-## Jest
-
-```js
-
-
-
 ```
 
 ---
