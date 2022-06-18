@@ -34,8 +34,15 @@ La doc c'est [ici](https://nodejs.org/fr/)
 const express = require("express");
 const app = express();
 
+app.set("views", "./app/views"); // On set les vues ejs seront a la racine
+app.set("view engine", "ejs"); // On dit a express d'utliliser ejs
+
+app.use(express.static("./public")); // Les fichier satatic seront directement a la racine "/"
+
+app.use(express.urlencoded({ extended: false })); // Urlencoded permet de se servir de req.body (tout se qui est dans l'url (?toto=tata....))
+
 app.get("/", (req, res) => {
-    res.send("hello");
+    res.render("homePage");
 });
 
 app.use("*", (req, res) => {
@@ -92,8 +99,9 @@ npm i nodemon
 npm run dev
 ```
 
+Ligne a ajouter dans package.json
+
 ```json
-// Ligne a ajouter dans package.json
 {
     "scripts": {
         "dev": "nodemon server.js",
@@ -111,14 +119,14 @@ Doc [ici](https://jsdoc.app/)
 
 ```js
 /**
- * Fonction qui fait rien de speciale
- * @param {*} req recupere les parametre dans l'url et l'affiche dans le terminal
- * @param {*} res renvoie un simple "hello"
- */
+* Fonction qui fait rien de speciale
+* @param {*} req recupere les parametre dans l'url et l'affiche dans le terminal
+* @param {*} res renvoie un simple "hello"
+*/
 function toto(req, res) {
     /**
-     * Recupere les parametre "/?name=..."
-     */
+    * Recupere les parametre "/?name=..."
+    */
     const params = req.params.name;
     console.log(params);
     res.send("hello");
@@ -239,18 +247,42 @@ Ou dans le `package.json`
 "scripts": {
     "dev": "DEBUG='toto, nomFichier, tata' node server.js"
 },
-
-// npm run dev = toto hello +0ms
 ```
 
+Resultat :
+
+```bash
+$ npm run dev
+
+toto hello +0ms
+```
 ---
 
 ## Session
 
+```bash
+# Init
+npm i express-session
+```
+
+On set la session dans l'index du server
+
 ```js
+app.use(session({ // on se sert des session pour appeller un cookie qui va suivre le visiteur
+    secret: "le secret est secret il peut etre placer dans le .env", // on mets un secret au piff
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: false, // false = http true = https
+    }
+}));
 
-
-
+app.use((req, res, next) => { // on defini ce qui se trouve dans l'objet de session
+    if (!req.session.idSearch) {
+        req.session.idSearch = 0;
+    }
+    next();
+});
 ```
 
 ---

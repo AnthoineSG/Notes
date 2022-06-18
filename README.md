@@ -20,9 +20,9 @@ Ce document est realiser pour ***Linux*** et ***Windows***
 
 ## Back
 
-- [Ejs](./Back-end/back.md#ejs)
-- [Sqitch](./Back-end/back.md#sqitch)
 - [Strapi](./Back-end/back.md#strapi)
+- [Sqitch](./Back-end/back.md#sqitch)
+- [Ejs](./Back-end/back.md#ejs)
 - **Node**
     - **Modules de base**
         - [NodeJS](./Back-end/node/modulesDeBase.md#nodejs-1)

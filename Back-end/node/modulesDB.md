@@ -41,12 +41,54 @@ const client = new Client();
 
 ## Mongodb
 
+Facile, simple, efficace, mais nécessite de faire ses aggregation a la main pour obtenir les documents que l'on souhaite
+
 Doc [ici](https://github.com/mongodb/node-mongodb-native)
 
+```bash
+# Init
+npm i mongodb
+```
+
+Pour ce connecter
+
 ```js
+const { MongoClient } = require("mongodb");
 
+export async function connectDB() {
+    const url = "mongodb://localhost:27017/";
+    const client = new MongoClient(url);
+    await client.connect();
+    const db = client.db("nom-collection");
+    return db;
+}
+```
 
+Dans le router on peut passer la connection (pas obliger)
 
+```js
+const { connectDB } = require("./database");
+
+router.get("/api/history", controllersFactory(db).getPixelHistory);
+```
+
+Dans un controller
+
+```js
+const { Db } require("mongodb");
+
+function controllersFactory(db: Db) {
+    return {
+        async getPixelHistory(req, res) {
+            const pixels = await db.collection("pixelStorage")
+                .find()
+                .sort({ createdAt: 1 })
+                .project({ createdAt: 0, _id: 0 })
+                .toArray();
+            res.json(pixels);
+        }
+    };
+}
 ```
 
 ---
