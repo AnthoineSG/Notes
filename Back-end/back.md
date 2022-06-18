@@ -1,13 +1,14 @@
 # Back
 
+Pour acompagner une `API` il vaut mieux utiliser une application pour tester ses routes simplement
+
+- Insomia tres bien pour les petite API sans trop de request
+- Postman bien adapter pour les plus gros projet
+
 ## Strapi
 
 La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
 
-Pour acompagner Strapi et meme lors de la creation de toute API il vaut mieux utiliser une app pour test ses routes simplement
-
-- Insomia tres bien pour les petite API sans trop de request
-- Postman bien adapter pour les plus gros projet
 
 ```bash
 # Cree un role dans la BDD
