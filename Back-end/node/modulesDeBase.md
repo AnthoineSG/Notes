@@ -30,6 +30,10 @@ Facon simple de crée un server `http`
 
 La doc c'est [ici](https://nodejs.org/fr/)
 
+```bash
+npm i express
+```
+
 ```js
 const express = require("express");
 const app = express();
@@ -99,7 +103,7 @@ npm i nodemon
 npm run dev
 ```
 
-Ligne a ajouter dans package.json
+Ligne a ajouter dans `package.json`
 
 ```json
 {
@@ -219,7 +223,7 @@ Doc [ici](https://www.npmjs.com/package/debug)
 
 ```bash
 # Init
-npm i debug
+npm i -D debug
 ```
 
 Dans un fichier random :

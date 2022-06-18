@@ -26,7 +26,7 @@ npm run develop
 
 ## Sqitch
 
-> Install sur windows (horible) => install `chocolatey` => install `stawberry perl` => install `sqitch`
+> Install sur windows (horrible) => install `chocolatey` => install `stawberry perl` => install `sqitch`
 
 > Install sur linux `sudo apt-get install sqitch`
 

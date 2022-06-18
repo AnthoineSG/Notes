@@ -2,6 +2,8 @@
 
 ## PoqtgreSQL
 
+Utiliser [PGadmin4](https://www.pgadmin.org/)
+
 Beaucoup d'autre option sont dispo [ici](https://docs.postgresql.fr/11/)
 
 > Un "SGBD" permet d'acceder a une "BDD" qui contient des "Tables" "relationnel ou non" qui contiennent des "Enregistrement"
@@ -78,6 +80,8 @@ ALTER TABLE "tutu" ADD COLUMN "toto" text_ok NOT NULL;
 ---
 
 ## MongoDB
+
+Utiliser [MongoDB Compass](https://www.mongodb.com/fr-fr/products/compass)
 
 Doc [ici](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/)
 
