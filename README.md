@@ -46,9 +46,7 @@ Ce document est realiser pour ***Linux*** et ***Windows***
     - [Jest](./Back-end/node/modulesDeBase.md#jest)
   - **BDD**
     - [PostgresQL](./Back-end/BDD.md#poqtgresql)
-      - PGadmin4
     - [MongoDB](./Back-end/BDD.md#mongodb)
-      - MongoDB Compass
 
 ---
 
