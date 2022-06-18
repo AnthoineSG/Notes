@@ -32,6 +32,7 @@ Ce document est realiser pour ***Linux*** et ***Windows***
         - [JSDoc](./Back-end/node/modulesDeBase.md#jsdoc)
         - [Swagger](./Back-end/node/modulesDeBase.md#swagger)
         - [Debug](./Back-end/node/modulesDeBase.md#debug)
+        - [Session](./Back-end/node/modulesDeBase.md#session)
     - **Module pour DB**
         - [PG](./Back-end/node/modulesDB.md#pg)
         - [Mongodb](./Back-end/node/modulesDB.md#mongodb)
