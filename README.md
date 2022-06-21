@@ -48,6 +48,12 @@ Ce document est realiser pour ***Linux*** et ***Windows***
     - [PostgresQL](./Back-end/BDD.md#poqtgresql)
     - [MongoDB](./Back-end/BDD.md#mongodb)
 
+
+https://www.npmjs.com/package/@faker-js/faker
+
+
+
+
 ---
 
 ## Front
