@@ -4,21 +4,21 @@
 
 C'est un gros truc qui permet de faire pas mal de choses
 
-Possibiliter d'ajouter des modules de facon tres simple aussi via le terminal
+Possibilité d'ajouter des modules de façon très simple aussi via le terminal
 
 La doc c'est [ici](https://www.npmjs.com/)
 
 ```bash
-# Ajoute un fichier pakage.json qui permet de rendre les modules disponible dans l'application
+# Ajoute un fichier pakage.json qui permet de rendre les modules disponibles dans l'application
 npm init -y
 
-# Permet d'installer des module
+# Permet d'installer des modules
 npm i nom-du-module
 
-# Intalle un module dispo uniquement lors du developpement de l'app
+# Intaller un module dispo uniquement lors du développement de l'app
 npm i -D nom-du-module
 
-# Desinstalle un module
+# Désinstaller un module
 npm uninstall nom-du-module
 ```
 
@@ -26,7 +26,7 @@ npm uninstall nom-du-module
 
 ## Express
 
-Facon simple de crée un server `http`
+Façon simple de créer un serveur `http`
 
 La doc c'est [ici](https://nodejs.org/fr/)
 
@@ -38,10 +38,10 @@ npm i express
 const express = require("express");
 const app = express();
 
-app.set("views", "./app/views"); // On set les vues ejs seront a la racine
-app.set("view engine", "ejs"); // On dit a express d'utliliser ejs
+app.set("views", "./app/views"); // On set les vues ejs pour qu'elles soient à la racine
+app.set("view engine", "ejs"); // On dit à express d'utliliser ejs
 
-app.use(express.static("./public")); // Les fichier satatic seront directement a la racine "/"
+app.use(express.static("./public")); // Les fichiesr static seront directement à la racine "/"
 
 app.use(express.urlencoded({ extended: false })); // Urlencoded permet de se servir de req.body (tout se qui est dans l'url (?toto=tata....))
 
@@ -62,7 +62,7 @@ app.listen(8080, () => {
 
 ## Dotenv
 
-Permet de paramétrer des variable d'environnement pour les rendre disponible partout dans le projet
+Permet de paramétrer des variables d'environnement pour les rendre disponibles partout dans le projet
 
 Doc [ici](https://www.npmjs.com/package/dotenv)
 
@@ -91,7 +91,7 @@ console.log(port); // 3000
 
 ## Nodemon
 
-Module de dev simple dedier au relancement du server a chaque save
+Module de dev simple dédié au relancement du serveur à chaque save
 
 Doc [ici](https://www.npmjs.com/package/nodemon)
 
@@ -117,19 +117,19 @@ Ligne a ajouter dans `package.json`
 
 ## JSDoc
 
-Natif a js permet de commanter ses fonctions, methodes, const, ...
+Natif à js permet de commanter ses fonctions, methodes, const, ...
 
 Doc [ici](https://jsdoc.app/)
 
 ```js
 /**
-* Fonction qui fait rien de speciale
-* @param {*} req recupere les parametre dans l'url et l'affiche dans le terminal
+* Fonction qui fait rien de special
+* @param {*} req récupere les paramètres dans l'url et l'affiche dans le terminal
 * @param {*} res renvoie un simple "hello"
 */
 function toto(req, res) {
     /**
-    * Recupere les parametre "/?name=..."
+    * Recupere les parametres "/?name=..."
     */
     const params = req.params.name;
     console.log(params);
@@ -143,7 +143,7 @@ function toto(req, res) {
 
 Outils qui permet en quelques lignes de crée un back jolie et bien en forme (~ strapi mais c'est toi qui fait tout)
 
-:warning: Attention il y a beaucoup de version npm de swagger, il faut bien faire attention a la version que l'on installe : `express-jsdoc-swagger`
+:warning: Attention il y a beaucoup de versions npm de swagger, il faut bien faire attention à la version que l'on installe : `express-jsdoc-swagger`
 
 C'est une [OpenAPI](https://en.wikipedia.org/wiki/OpenAPI_Specification), la doc c'est [ici](https://github.com/brikev/express-jsdoc-swagger) ou [la](https://swagger.io/specification/)
 
@@ -182,7 +182,7 @@ const options = {
 expressJSDocSwagger(app)(options);
 ```
 
-Dans le router crée une JSDoc adapter a swagger
+Dans le router créer une JSDoc adapté à swagger
 
 ```js
 /**
@@ -217,7 +217,7 @@ router.post("/categories/:id", categoriesController.addOne);
 
 Outils permetant de `BUFFER` les console.log
 
-Permet de personnaliser ses log, d'avoir des infos supplementaire, d'avoir des couleurs, ...
+Permet de personnaliser ses log, d'avoir des infos supplementaires, d'avoir des couleurs, ...
 
 Doc [ici](https://www.npmjs.com/package/debug)
 
@@ -272,8 +272,8 @@ npm i express-session
 On set la session dans l'index du server
 
 ```js
-app.use(session({ // on se sert des session pour appeller un cookie qui va suivre le visiteur
-    secret: "le secret est secret il peut etre placer dans le .env", // on mets un secret au piff
+app.use(session({ // on se sert des sessions pour appeller un cookie qui va suivre le visiteur
+    secret: "le secret est secret il peut être placé dans le .env", // on mets un secret au piff
     resave: false,
     saveUninitialized: true,
     cookie: {

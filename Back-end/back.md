@@ -2,8 +2,8 @@
 
 Pour acompagner une `API` il vaut mieux utiliser une application pour tester ses routes simplement
 
-- Insomia tres bien pour les petite API sans trop de request
-- Postman bien adapter pour les plus gros projet
+- Insomia très bien pour les petites API sans trop de request
+- Postman bien adapté pour les plus gros projets
 
 ## Strapi
 
@@ -11,14 +11,14 @@ La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/da
 
 
 ```bash
-# Cree un role dans la BDD
+# Créer un rôle dans la BDD
 
-# Commande pour cree un nouveau projet
+# Commande pour créer un nouveau projet
 npx create-strapi-app@latest "nom-du-projet"
 
-# Suivre les idication dans le terminal
+# Suivre les idications dans le terminal
 
-# Demarer le projet
+# Démarrer le projet
 npm run develop
 ```
 
@@ -30,20 +30,20 @@ npm run develop
 
 > Install sur linux `sudo apt-get install sqitch`
 
-Sqitch sert a `"simplifier"` la mise en place des BDD en fonction du déploiement
+Sqitch sert à `"simplifier"` la mise en place des BDD en fonction du déploiement
 
-Il permet de lancé des script simple pour tout installer en BDD
+Il permet de lancer des scripts simples pour tout installer en BDD
 
 ```bash
 # Pour installer sqitch dans un projet sous PSQL
 sqitch init "nom-du-projet" --engine pg
-# Cette ligne crée plusieur dossier et et fichier vide
+# Cette ligne crée plusieur dossier et fichier vide
 
 # Pour ajouter une version 
 sqitch add "nom-version" -n "description de la version"
-# Cette ligne crée des fichier a remplire prioriser les noms 01-02-03-...
+# Cette ligne crée des fichier à remplir, prioriser les noms 01-02-03-...
 
-# Perso je prefere crée un fichier supplementaire ex: deploy.sh pour lancer mon script
+# Perso je préfère créer un fichier supplémentaire ex: deploy.sh pour lancer mon script
 export PGUSER="user-en-BDD"
 export PGPASSWORD="MDP-de-la-BDD"
 
@@ -56,7 +56,7 @@ sqitch deploy db:pg:"nom-BDD"
 
 ## Ejs
 
-Ejs est utiliser pour les application monolithique, il est simple a utiliser mais pas très ergonomique
+Ejs est utilisé pour les applications monolithiques, il est simple à utiliser mais pas très ergonomique
 
 La doc [ici](https://ejs.co/#docs)
 
@@ -72,7 +72,7 @@ La doc [ici](https://ejs.co/#docs)
     <%= element %>
 <% }); %>
 
-<!-- Pour acceder a un objet -->
+<!-- Pour accéder a un objet -->
 <%= objet.key %>
 ```
 

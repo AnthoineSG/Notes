@@ -1,6 +1,6 @@
 # Notes
 
-Ce document est realiser pour ***Linux*** et ***Windows***
+Ce document est realisé pour ***Linux*** et ***Windows***
 
 ---
 

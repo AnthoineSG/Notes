@@ -2,7 +2,7 @@
 
 ## VSCode
 
-Extention :
+Extension :
 
 - Better Comments
 - Indent-rainbow
@@ -20,7 +20,7 @@ Extention :
 
 ## Architecture
 
-Exemple pour une application bien structurer
+Exemple pour une application bien structurée
 
 ```bash
 .
@@ -136,16 +136,16 @@ Exemple pour une application monolithique
 ## Bash
 
 ```bash
-# Pour se balader dans les dossier
+# Pour se balader dans les dossiers
 cd / cd .. / cd <nom-du-dossier>
 
-# Voir ou on ce situe
+# Voir ou on se situe
 pwd
 
-# Voir tout les fichier/dossier meme les cacher
+# Voir tout les fichiers/dossiers même les cacher
 ls -a
 
-# Voir la place dispo sur la machine
+# Voir la place disponible sur la machine
 df -h
 
 # Voir le contenu du fichier
@@ -154,16 +154,16 @@ cat <nom-du-fichier>
 # Modifier un fichier en ligne de commande
 sudo nano <nom-du-fichier>
 
-# Cree un fichier
+# Créer un fichier
 touch <nom-du-fichier>
 
-# Cree un dossier
+# Créer un dossier
 mkdir <nom-du-dossier>
 
-# Recupere toutes les mise a jour disponible
+# Récupérer toutes les mises à jour disponibles
 sudo apt-get update
 
-# Effectue les mise a jour
+# Effectuer les mise a jour
 sudo apt-get upgrade
 
 # Pour insaller une application
@@ -180,43 +180,43 @@ La doc c'est [ici](https://education.github.com/git-cheat-sheet-education.pdf)
 # Ajoute un .git a un dossier
 git init
 
-# Permet de recuperer un repo
+# Permet de récuperer un repo
 git clone key-ssh-du-remote
 
-# Permet de voir les modif depuis le dernier commit
+# Permet de voir les modifs depuis le dernier commit
 git status
 
 # Permet de voir tout l'historique des commit
 git log
 
-# Permet de recuperer les changement depuis le repo
+# Permet de récuperer les changements depuis le repo
 git pull
 
-# Ajoute toute les modification
+# Ajouter toute les modification
 git add .
 
-# Enveloppe les modification et donne un titre
+# Envelopper les modification et donner un titre
 git commit-m "nom-du-commit"
 
-# Envoie le commit sur la branche master
+# Envoyer le commit sur la branche master
 git push
 
-# Envoie le commit sur une nouvelle branche
+# Envoyer le commit sur une nouvelle branche
 git push --set-upstream nom-new-branch
 
-# Envoie une branche sur un remote precis
+# Envoyer une branche sur un remote precis
 git push nom-remote nom-branch
 
-# Permet de voir toute les branches et remote connecter a ce fichier
+# Permet de voir toute les branches et remote connectés à ce fichier
 git branch -a
 
-# Cree une nouvelle branche et se place dessus
+# Créer une nouvelle branche et se placer dessus
 git checkout nom-new-branch
 
 # Permet de changer de branche
 git switch nom-branch
 
-# Permet de voir toute les connection du dossier
+# Permet de voir toute les connections du dossier
 git remote -v
 
 # Premet d'ajouter une connection
@@ -227,7 +227,7 @@ git remote add nom-remote key-ssh-du-remote
 
 ## Tree
 
-Application **Linux** qui permet d'afficher l'architecture des fichier/dossier
+Application **Linux** qui permet d'afficher l'architecture des fichiers/dossiers
 
 ```bash
 # Pour intaller tree
@@ -250,11 +250,11 @@ tree -I node_modules
 
 Bien differencier `image` et `conteneur`
 
-Lancer une `image` creera un nouveau `conteneur`
+Lancer une `image` créera un nouveau `conteneur`
 
-Supprimer un `conteneur` se supprimera pas l'`image`
+Supprimer un `conteneur` ne supprimera pas l'`image`
 
-Une `image` est unique mais peut etre dans plusieur `conteneur`
+Une `image` est unique mais peut être dans plusieur `conteneur`
 
 ```bash
 # Voir toutes les images
@@ -263,16 +263,16 @@ docker images
 # Pour voir les conteneur en fonctionnement
 docker ps
 
-# Pour voir les conteneur qui on ete cree
+# Pour voir les conteneur qui on été crée
 docker ps -a
 
-# Recuperer tout les id des conteneur actif ou non
+# Récuperer tout les id des conteneur actifs ou non
 docker ps -aq
 
 # Installer puis lancer une image
 docker run "nom-de-l'image"
 
-# Installer puis lancer une image et la supprimer des quelle a fini
+# Installer puis lancer une image et la supprimer dès qu'elle a fini
 docker run --rm "nom-de-l'image"
 
 # Pour exécuter une commande dans un conteneur
@@ -290,38 +290,38 @@ docker exec -it "nom-du-conteneur" bash
 # Pour demarer un conteneur
 docker start "nom-conteneur"
 
-# Pour arreter un conteneur
+# Pour arrêter un conteneur
 docker stop "nom-conteneur"
 
 # Supprimer une image
 docker rmi "id-de-l'image"
 
-# Pour suprimer un conteneur
+# Pour supprimer un conteneur
 docker rm "conteneur-id"
 
-# Pour suprimer tout les conteneur inactif
+# Pour supprimer tout les conteneur inactifs
 docker rm $(docker ps -aq)
 
-# Pour suprimer tout les conteneur actif ou non
+# Pour suprimer tout les conteneur actifs ou non
 docker rm -f $(docker ps -aq)
 
 # Pour effacer tout ce qui sert à rien (ça fait un reset)
 docker system prune
 
-# Contruire une image avec un tagname jsonserver et sans le cache, pour avoir une image fraiche
+# Contruire une image avec un tagname json-server et sans le cache, pour avoir une image fraîche
 docker build . --no-cache -t "nom-du-server"
 
-# Pour exécuter notre image, en exposant le port 3000 du conteneur au port 3000 de la VM hote.
-# Le premier 3000 est le port de l'hote.
+# Pour exécuter notre image, en exposant le port 3000 du conteneur au port 3000 de la VM hôte.
+# Le premier 3000 est le port de l'hôte.
 docker run --rm -p 3000:3000 "nom-du-server"
 ```
 
 ### Sur un fichier `Dockfile`
 
-Ce fichier doit etre acompagner de fichier `.json` qui comprennent les donnée a export sur docker
+Ce fichier doit être accompagneé de fichiers `.json` qui comprennent les données à export sur docker
 
 ```docker
-# On installe une image et on la modifie pour créer notre image custom et la rendre dispo partout grace a docker
+# On installe une image et on la modifie pour créer notre image custom et la rendre dispo partout grâce à docker
 
 # Cette image contient un OS avec nodejs et npm installés
 FROM node:latest
@@ -332,16 +332,16 @@ WORKDIR /home/server
 # On dit à notre conteneur d'installer json-server globalement
 RUN npm install -g json-server
 
-# On envoie les fichier `db.json` et `db-copy.json` sur le conteneur
+# On envoie les fichiers `db.json` et `db-copy.json` sur le conteneur
 COPY db.json /home/server/db.json
 COPY db-copy.json /home/server/db-copy.json
 
-# Une fois lancé le conteneur execute la commande ci-dessous
-# Elle indique que le server sera sur les port 0.0.0.0 et qu'il envera ses données sur le port 3000
+# Une fois lancé le conteneur exécute la commande ci-dessous
+# Elle indique que le server sera sur les ports 0.0.0.0 et qu'il enverra ses données sur le port 3000
 ENTRYPOINT ["json-server", "--port", "3000" ,"--host", "0.0.0.0"]
 
-# Le conteneur execute par default db.json
-# Pour executer la copy il faut relancé le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
+# Le conteneur exécute par défaut db.json
+# Pour exécuter la copy il faut relancer le server et taper `docker run --rm -p 3000:3000 jsonserver db-copy.json`
 CMD ["db.json"]
 ```
 
@@ -349,15 +349,15 @@ CMD ["db.json"]
 
 ## REGEX
 
-Outils simpas pour ecrire des regex [ici](https://regex101.com/)
+Outils sympas pour écrire des regex [ici](https://regex101.com/)
 
 La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
 
 ```js
-// Exemple pour verifier une plaque d'immatriculation française
+// Exemple pour vérifier une plaque d'immatriculation française
 '/^((?!(SS|WW))[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})\-((?!000)\d{3})\-((?!SS)[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})$/'
 
-// Pour declarer une regex
+// Pour déclarer une regex
 '^ $'
 
 // Pour interdire quelque chose
@@ -372,17 +372,17 @@ La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions
 '\.'
 '\?'
 
-// Pour limiter la chaine de caractere
-'{2,3}' // Cette chaine de caractere aura 2 ou 3 carac
+// Pour limiter la chaine de caracteres
+'{2,3}' // Cette chaine de caracteres aura 2 ou 3 carac
 'a*' // Donne rien ou aaaaaaaaaaaaaaaaa
 'a+' // Donne un a ou aaaaaaaaaaaaaaaaa
 'a?' // Donne un a ou rien
 '.' // Accepte autant de caracter possible
 
-// Pour regrouper des element (organisation)
+// Pour regrouper des éléments (organisation)
 '((?!b)[a-d]{3})' // = acd
 
-// Pour regrouper tout les caractere
+// Pour regrouper tout les caractères
 '[a-z]' // = a, b, c, ... , z
 '[A-Z]' // = A, B, C, ... , Z
 '[0-9]' // = 0, 1, 2, ... , 9
@@ -398,7 +398,7 @@ La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions
 
 ## Eslint
 
-Eslint permet d'analiser le code ecrit et de coriger les potentiel erreurs de syntaxe
+Eslint permet d'analyser le code écrit et de corriger les potentielles erreurs de syntaxe
 
 Doc [ici](https://eslint.org/demo)
 
@@ -443,15 +443,15 @@ Pour un fichier config de base
 
 ## TypeScript
 
-`TypeScript` est une version de `javaScript` typer
+`TypeScript` est une version de `javaScript` typé
 
-Les navigateur ne lise pas Ts il faut donc compiler ses fichier pour les transformer en Js
+Les navigateurs ne lisent pas Ts il faut donc compiler ces fichiers pour les transformer en Js
 
 Doc [ici](https://www.typescriptlang.org/docs/)
 
-### TypeScript necessite une configuration pour etre utiliser
+### TypeScript nécessite une configuration pour être utilisé
 
-Il fait un `package.json` specifique
+Il fait un `package.json` spécifique
 
 ```json
 {
@@ -503,18 +503,18 @@ Un `.eslint.json` qui lit TypeScript
 }
 ```
 
-Un fichier `tsconfig.json` qui permet la compilation dest fichier ts en js
+Un fichier `tsconfig.json` qui permet la compilation des fichiers ts en js
 
 ```json
 {
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
-        "outDir": "dist", // les fichier compiler seront mis dans un dossier "dist"
+        "outDir": "dist", // les fichiers compilés seront mis dans un dossier "dist"
         "sourceMap": true
     },
     "files": [
-        "./index.ts", // list des fichier ts a compiler
+        "./index.ts", // list des fichier ts à compiler
         "./app/router.ts",
     ],
     "exclude": [

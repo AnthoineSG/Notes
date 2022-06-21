@@ -2,9 +2,9 @@
 
 ## PG
 
-PG est un module utiliser pour se connecter a une BDD postgreSQL
+PG est un module utilisé pour se connecter à une BDD postgreSQL
 
-Utile pour un datamapper et aussi pour d'autre module qui l'utilise comme Sqitch, Sequelize, ...
+Utiler pour un datamapper et aussi pour d'autres modules comme Sqitch, Sequelize, ...
 
 Doc [ici](https://node-postgres.com/)
 
@@ -41,7 +41,7 @@ const client = new Client();
 
 ## Mongodb
 
-Facile, simple, efficace, mais nécessite de faire ses aggregation a la main pour obtenir les documents que l'on souhaite
+Facile, simple, efficace, mais nécessite de faire ses aggregations à la main pour obtenir les documents que l'on souhaite
 
 Doc [ici](https://github.com/mongodb/node-mongodb-native)
 
@@ -50,7 +50,7 @@ Doc [ici](https://github.com/mongodb/node-mongodb-native)
 npm i mongodb
 ```
 
-Pour ce connecter
+Pour se connecter
 
 ```js
 const { MongoClient } = require("mongodb");

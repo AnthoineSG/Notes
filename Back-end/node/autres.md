@@ -2,9 +2,9 @@
 
 ## Joi
 
-C'est un module qui permet de verifier que les donnée envoyer par le Front sont conforme a ce qu'on attend en Back
+C'est un module qui permet de vérifier que les donnée envoyées par le Front sont conformes à ce qu'on attend en Back
 
-On crée des schema de ce que l'on doit recevoir
+On crée des schemas de ce que l'on doit recevoir
 
 > Un Objet avec une certaine key
 
@@ -61,7 +61,7 @@ request(req, res, next) {
 
 Bcrypt est un module qui permet de chiffrer les MDP
 
-Le mdp est indechiffrable mais il reste comparable
+Le mdp est indéchiffrable mais il reste comparable
 > $2b$10$N7mFIT2CEKw/aypZ === $2b$10$N7mFIT2CEKw/aypZ
 
 Doc [ici](https://github.com/kelektiv/node.bcrypt.js)
@@ -77,10 +77,10 @@ const bcrypt = require("bcrypt");
 const password = "1234azerty";
 
 const salt = await bcrypt.genSalt(10);
-// On genere du "sel" (un nombre de caracter indechiffrable)
+// On génère du "sel" (un nombre de caractères indéchiffrables)
 
 const hash = await bcrypt.hash(password, salt);
-// On mellange le sel et le mdp
+// On mélange le sel et le mdp
 
 console.log(password)
 // => $2a$12$N7oprj2MWp0K6xJe5.s4t.ciFCjG0l9cJ/L4tbtqgB386cKI1Yrtq
@@ -90,7 +90,7 @@ console.log(password)
 
 ## Dayjs
 
-Module pour afficher la date de differente maniere avec une doc **HORRIBLE**
+Module pour afficher la date de différente manières avec une doc **HORRIBLE**
 
 Doc [ici](https://day.js.org/docs/en/installation/node-js)
 
@@ -105,14 +105,14 @@ const dayjs = require("dayjs");
 const date = dayjs().format("[Nous somme le] DD/MM/YYYY [et il est] HH:mm");
 
 console.log(date)
-// => Nous somme le 18/06/2022 et il est 22:05
+// => Nous sommes le 18/06/2022 et il est 22:05
 ```
 
 ---
 
 ## Jest
 
-C'est un outils qui permet de faire des test sur tout ce qui entre et sort de l'app
+C'est un outils qui permet de faire des tests sur tout ce qui entre et sort de l'app
 
 Doc [ici](https://jestjs.io/fr/docs/getting-started)
 
