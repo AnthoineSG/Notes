@@ -158,3 +158,56 @@ describe("On verifie les elements dans le json", () => {
 ```
 
 ---
+
+## Faker
+
+Module utile pour générer des données aléatoire
+
+> Utile notamment pour populer une base de donnée
+
+Doc [ici](https://fakerjs.dev/guide/)
+
+```bash
+# Init
+npm i @faker-js/faker
+```
+
+```js
+const { faker } = require("@faker-js/faker");
+faker.locale = "fr";
+```
+
+```js
+const animaux = {
+    chat: faker.animal.cat(),
+    chien: faker.animal.dog(),
+    poisson: faker.animal.fish()
+}
+console.log(animaux);
+```
+
+```bash
+# Resultat aléatoire a chaque lancement
+{ chat: 'LaPerm', chien: 'Chien courant serbe', poisson: 'Tétraodon' }
+```
+
+```js
+const dates = [];
+
+for (let i = 0; i < 4; i++) {
+    dates.push(faker.date.birthdate());
+}
+console.log(dates);
+```
+
+```bash
+# Resultat aléatoire a chaque lancement
+[
+  1966-09-15T06:49:42.986Z,
+  1978-10-26T21:18:16.831Z,
+  1970-09-11T23:10:26.033Z,
+  1951-07-17T05:11:33.832Z
+]
+```
+
+---

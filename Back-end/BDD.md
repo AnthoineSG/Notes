@@ -134,6 +134,7 @@ TRUNCATE TABLE "nom-table";
 ```
 
     fonction
+    WITH
 ---
 
 ## MongoDB
