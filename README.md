@@ -44,15 +44,10 @@ Ce document est realisé pour ***Linux*** et ***Windows***
     - [Bcrypt](./Back-end/node/autres.md#bcrypt)
     - [Dayjs](./Back-end/node/autres.md#dayjs)
     - [Jest](./Back-end/node/modulesDeBase.md#jest)
+    - [Faker](./Back-end/node/autres.md#faker)
   - **BDD**
     - [PostgresQL](./Back-end/BDD.md#poqtgresql)
     - [MongoDB](./Back-end/BDD.md#mongodb)
-
-
-https://www.npmjs.com/package/@faker-js/faker
-
-
-
 
 ---
 
