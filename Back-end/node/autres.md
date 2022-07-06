@@ -211,3 +211,119 @@ console.log(dates);
 ```
 
 ---
+
+## Cron
+
+Cron est un module qui est utiliser pour effectuer une tache precise a une heure percise
+
+> Comme effectuer une fonction a un moment donnée
+
+> Recupere les log a une certaine heure
+
+> Aller fetch une donnée sur une API externe
+
+Doc [ici](https://github.com/kelektiv/node-cron)
+
+```bash
+# Init
+npm i cron
+```
+
+```js
+// const CronJob = require("cron");
+import { CronJob } from 'cron';
+
+const job = new CronJob(
+    '* * * * * *', // On gere la frequence a la quelle la fonction va ce declancher (ici a chaque seconde)
+    function() { // On place une fonction qui est a repeter
+        const newDate = new Date();
+        console.log('Every second:', newDate); // Chaque seconde affiche la date dans le terminal
+    }
+);
+job.start();
+```
+
+---
+
+## Multer
+
+Multer est un module permetent de recupere les information d'un formulaire (FormData)
+
+Doc [ici](https://www.npmjs.com/package/multer)
+
+```bash
+# Init
+npm i multer
+```
+
+Bien preciser dans le formulaire : `enctype="multipart/form-data"`
+
+```html
+<form action="/toto" method="post" enctype="multipart/form-data">
+    <input type="text" name="toto" placeholder="text">
+    <input type="submit" value="valider">
+</form>
+```
+
+Multer rend le `body` disponible coté back
+
+```js
+// const multer = require("multer");
+import multer from "multer";
+const upload = multer();
+app.use(upload.none()); // A placer dans l'index server pour le rendre disponible dans toute l'app
+
+app.post("/toto", (req, res) => {
+    const toto = req.body.toto;
+    res.send(`Le resultat du formulaire est : ${toto}`)
+});
+```
+
+---
+
+## Formidable
+
+Formidable est similaire a Multer mais est plus puissant
+
+Il permet notamment de recuperer les resultat d'un formulaire et de les interpreter en format `json`
+
+Doc [ici](https://www.npmjs.com/package/formidable)
+
+```bash
+# Init
+npm i 
+```
+
+Dans le html un formulaire classique suffit
+
+```html
+<form action="/toto" method="post">
+    <input type="text" name="toto" placeholder="text">
+    <input type="submit" value="valider">
+</form>
+```
+
+Formidable recupere le `body` directement sur la route
+
+```js
+// const formidable = require("formidable");
+import formidable from "formidable";
+
+app.post('/toto', (req, res) => {
+    const form = formidable(); // On recupere le body sur la route POST
+
+    form.on("field", (field, value) => { // Pour gerer uniquement les champs d'un formulaire
+        console.log(field, value);
+    });
+
+    form.parse(req, (err, fields, files) => { // Pour gerer les champs et les fichiers
+        if (err) {
+            next(err); // On peut gere les erreurs
+            return;
+        }
+        res.json({ fields });
+    });
+});
+```
+
+---

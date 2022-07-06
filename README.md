@@ -33,18 +33,21 @@ Ce document est realisé pour ***Linux*** et ***Windows***
     - [Swagger](./Back-end/node/modulesDeBase.md#swagger)
     - [Debug](./Back-end/node/modulesDeBase.md#debug)
     - [Session](./Back-end/node/modulesDeBase.md#session)
-  - **Module pour DB**
-    - [PG](./Back-end/node/modulesDB.md#pg)
-    - [Mongodb](./Back-end/node/modulesDB.md#mongodb)
-  - **ORM**
-    - [Sequelize](./Back-end/node/ORM.md#sequelize)
-    - [Mongoose](./Back-end/node/ORM.md#mongoose)
   - **Autres**
     - [Joi](./Back-end/node/autres.md#joi)
     - [Bcrypt](./Back-end/node/autres.md#bcrypt)
     - [Dayjs](./Back-end/node/autres.md#dayjs)
     - [Jest](./Back-end/node/modulesDeBase.md#jest)
     - [Faker](./Back-end/node/autres.md#faker)
+    - [Cron](./Back-end/node/autres.md#cron)
+    - [Multer](./Back-end/node/autres.md#multer)
+    - [Formidable](./Back-end/node/autres.md#formidable)
+  - **Module pour DB**
+    - [PG](./Back-end/node/modulesDB.md#pg)
+    - [Mongodb](./Back-end/node/modulesDB.md#mongodb)
+  - **ORM**
+    - [Sequelize](./Back-end/node/ORM.md#sequelize)
+    - [Mongoose](./Back-end/node/ORM.md#mongoose)
   - **BDD**
     - [PostgresQL](./Back-end/BDD.md#poqtgresql)
     - [MongoDB](./Back-end/BDD.md#mongodb)
