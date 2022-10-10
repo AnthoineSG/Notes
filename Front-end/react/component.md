@@ -19,6 +19,8 @@ const root = createRoot(document.getElementById("root"));
 root.render(rootReactElement);
 ```
 
+---
+
 ## App (ou composant principal)
 
 App est le composant principal de l'application c'est la que les sous composants sont appeler
@@ -40,6 +42,8 @@ function App() {
 
 export default App;
 ```
+
+---
 
 ## Sous composant
 
@@ -64,3 +68,5 @@ Hello.propTypes = {
 
 export default Hello;
 ```
+
+---

@@ -23,6 +23,8 @@ A chaque mise a jour du state, `react-redux` effectue un nouveau rendu
 
 ![Redux](/assets/images/redux/Redux_communication.png)
 
+---
+
 ## Mise en place de redux
 
 ### Index de l'application react
@@ -77,6 +79,8 @@ const store = createStore(reducer, enhancers);
 
 export default store;
 ```
+
+---
 
 ## Reducer
 
@@ -134,6 +138,8 @@ const rootReducer = combineReducers({
 export default rootReducer;
 ```
 
+---
+
 ## Actions
 
 Permet de mieux s'organier en utilisant des constantes et des fonction plutot que des string et des objet
@@ -170,6 +176,8 @@ function App() {
 
 export default App;
 ```
+
+---
 
 ## Middlewares
 
@@ -252,3 +260,5 @@ const dataMiddleware = (store) => (next) => (action) => {
 
 export default dataMiddleware;
 ```
+
+---
