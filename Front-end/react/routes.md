@@ -1,10 +1,8 @@
-# Hooks
-
-## Route
+# Route
 
 Le module `react-router-dom` premet de metre en place des route front et de cree une **SPA** (Single Page Application)
 
-### Mise en place du router
+## Mise en place du router
 
 La premiere etapes est d'englober l'application dans **BrowserRouter** qui permettra d'utiliser differentes routes
 
@@ -25,7 +23,7 @@ root.render(
 );
 ```
 
-### Gestion des routes
+## Gestion des routes
 
 Le composant **Routes** permet de determiner une liste de composant qui seront afficher sur des route
 
@@ -63,7 +61,7 @@ function Blog() {
 export default Blog;
 ```
 
-### NavLink et Link
+## NavLink et Link
 
 Le module `react-router-dom` offre les balise **NavLink** et **Link** qui permette de remplacer les balise **a** en evitant de recharger ma page ce qui permet de crée une **SPA**
 
@@ -95,7 +93,7 @@ function Header() {
 export default Header;
 ```
 
-### useParams
+## useParams
 
 Ce hook permet de recuperer les parametre des url
 
@@ -124,7 +122,7 @@ function SingleArticle({ posts }) {
 export default SingleArticle;
 ```
 
-### useNavigate
+## useNavigate
 
 Permet de crée une redirection
 
@@ -148,7 +146,7 @@ function Posts() {
 export default Posts;
 ```
 
-### useLocation
+## useLocation
 
 Permet d'obtenir toutes les information comme l'url sur la quelle l'utilisateur ce situe
 
