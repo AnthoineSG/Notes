@@ -9,7 +9,6 @@ Pour acompagner une `API` il vaut mieux utiliser une application pour tester ses
 
 La doc [ici](https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest-api.html#api-parameters)
 
-
 ```bash
 # Créer un rôle dans la BDD
 
@@ -39,7 +38,7 @@ Il permet de lancer des scripts simples pour tout installer en BDD
 sqitch init "nom-du-projet" --engine pg
 # Cette ligne crée plusieur dossier et fichier vide
 
-# Pour ajouter une version 
+# Pour ajouter une version
 sqitch add "nom-version" -n "description de la version"
 # Cette ligne crée des fichier à remplir, prioriser les noms 01-02-03-...
 
@@ -68,9 +67,7 @@ La doc [ici](https://ejs.co/#docs)
 <%- include("path/..ejs") %>
 
 <!-- Boucler sur un tableau -->
-<% array.forEach(element => { %>
-    <%= element %>
-<% }); %>
+<% array.forEach(element => { %> <%= element %> <% }); %>
 
 <!-- Pour accéder a un objet -->
 <%= objet.key %>

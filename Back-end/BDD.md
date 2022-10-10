@@ -55,18 +55,18 @@ CREATE TABLE IF NOT EXISTS "nom-table" (
 -- Supprimer une table
 DROP TABLE IF EXISTS "nom-table";
 
--- Créer un type personalisé utilisable partout dans la DB 
+-- Créer un type personalisé utilisable partout dans la DB
 -- Permet d'avoir une column adress avec des sous column "postal_code" TEXT, "enter_code" INT, "city" TEXT, ...
 CREATE TYPE "article" AS (
-    "page" TEXT,
-    "numero" INT
+  "page" TEXT,
+  "numero" INT
 );
 
 -- Crée un nouveau domaine pour vérifier les info qui rentrent en BDD (même utilisation que TEXT/INT/...)
 CREATE DOMAIN nbr_supp_zero AS INT CHECK ( VALUE > 0 );
 CREATE DOMAIN text_ok AS TEXT CHECK ( VALUE ~ '^\w{5}$' );
 -- Ce domain est disponible partout dans la DB
--- On peut donc faire 
+-- On peut donc faire
 ALTER TABLE "tutu" ADD COLUMN "toto" text_ok NOT NULL;
 
 -- Crée un index permet d'accélérer la vitesse de calcul de la BDD
@@ -92,35 +92,35 @@ VALUES
 SELECT * FROM "nom-table";
 
 -- Joindre 2 tables et récuperer uniquement les data lier
-SELECT * FROM "table-gauche" 
+SELECT * FROM "table-gauche"
 INNER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
 -- Joindre 2 tables avec toutes les data de la table de gauche reliés à la table de droite
-SELECT * FROM "table-gauche" 
+SELECT * FROM "table-gauche"
 LEFT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
 -- Même chose mais récuperer toutes les data de la table de droite
-SELECT * FROM "table-gauche" 
+SELECT * FROM "table-gauche"
 RIGHT JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
 -- Récupeérer toutes les data des 2 tables même les data non liés
-SELECT * FROM "table-gauche" 
+SELECT * FROM "table-gauche"
 FULL OUTER JOIN "table-droite" ON "table-gauche"."table-droite-id" = "table-droite"."id";
 
--- Les sous-requêtes sont comme les JOIN mais récuperent uniquement les éléments de la 
+-- Les sous-requêtes sont comme les JOIN mais récuperent uniquement les éléments de la
 -- table du premier SELECT en respectant les conditions des autres
 -- Enfer à écrire mais très precis
 SELECT "name"
 FROM "user"
 WHERE "user"."id" IN(
-    SELECT "user_id"
-    FROM "age"
-    WHERE "age"."id" IN (
-        SELECT "age_id"
-        FROM "argent"
-        GROUP BY "age_id"
-        HAVING avg("money") > 102.5
-    )
+  SELECT "user_id"
+  FROM "age"
+  WHERE "age"."id" IN (
+    SELECT "age_id"
+    FROM "argent"
+    GROUP BY "age_id"
+    HAVING avg("money") > 102.5
+  )
 );
 
 -- HAVING est à utiliser avec GROUP BY et permet de grouper en suivant une certaine condition
@@ -133,8 +133,6 @@ DELETE FROM "nom-table" * WHERE "id" = 'enregistrement-a-supprimer';
 TRUNCATE TABLE "nom-table";
 ```
 
-    fonction
-    WITH
 ---
 
 ## MongoDB
@@ -171,45 +169,45 @@ db."nom-collection".find()
 # Trouver un document à un id
 db."nom-collection".find({ id: 20 })
 
-# Trouver un document avec un morceau de nom 
+# Trouver un document avec un morceau de nom
 db."nom-collection".find({ name: /exe/i })
 # Ici renvoie par exemple le document avec name = "exemple"
 
 # Pour les aggregation (ALED)
 db."nom-collection".aggregate([
-    {
-        # $match sert a rechercher des documents qui correspondent
-        '$match': {
-            # On récupere tout les documents qui on un type "Grass"
-            'type': 'Grass',
-            # On peut aussi recuperer plusieurs valeurs
-            "type": {$in: ["Grass", "Poison"]},
-            # On récupere tous les documents avec un nom qui contient les lettres "as"
-            'name': new RegExp('as', 'i')
-        }
-    },
-    {
-        # $group permet de regrouper les valeurs sortantes
-        '$group': {
-            # On récupere l'id avec les value name ex = { _id: "toto" }
-            '_id': '$name',
-            # On récupere une valeur et on calcule sa moyenne ex = { spaw_chanve: 2 }
-            'spawn_chance': {
-                '$avg': '$spawn_chance'
-            }
-        }
-    },
-    {
-        # $sort sert à trier les documents
-        '$sort': {
-            # Ici on trie de façon décroissante ( inverse = 1 )
-            'spawn_chance': -1
-        }
-    },
-    {
-        # Limite simplement le nombre de documents en sortie
-        '$limit': 10
+  {
+    # $match sert a rechercher des documents qui correspondent
+    '$match': {
+      # On récupere tout les documents qui on un type "Grass"
+      'type': 'Grass',
+      # On peut aussi recuperer plusieurs valeurs
+      "type": {$in: ["Grass", "Poison"]},
+      # On récupere tous les documents avec un nom qui contient les lettres "as"
+      'name': new RegExp('as', 'i')
     }
+  },
+  {
+    # $group permet de regrouper les valeurs sortantes
+    '$group': {
+      # On récupere l'id avec les value name ex = { _id: "toto" }
+      '_id': '$name',
+      # On récupere une valeur et on calcule sa moyenne ex = { spaw_chanve: 2 }
+      'spawn_chance': {
+        '$avg': '$spawn_chance'
+      }
+    }
+  },
+  {
+    # $sort sert à trier les documents
+    '$sort': {
+      # Ici on trie de façon décroissante ( inverse = 1 )
+      'spawn_chance': -1
+    }
+  },
+  {
+    # Limite simplement le nombre de documents en sortie
+    '$limit': 10
+  }
 ])
 ```
 

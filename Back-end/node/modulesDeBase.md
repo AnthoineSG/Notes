@@ -46,15 +46,15 @@ app.use(express.static("./public")); // Les fichiesr static seront directement �
 app.use(express.urlencoded({ extended: false })); // Urlencoded permet de se servir de req.body (tout se qui est dans l'url (?toto=tata....))
 
 app.get("/", (req, res) => {
-    res.render("homePage");
+  res.render("homePage");
 });
 
 app.use("*", (req, res) => {
-    res.send("404 Not Found");
+  res.send("404 Not Found");
 });
 
 app.listen(8080, () => {
-    console.log("Server start on http://localhost:8080");
+  console.log("Server start on http://localhost:8080");
 });
 ```
 
@@ -80,7 +80,7 @@ PORT=3000
 Dans le `index.js`
 
 ```js
-require('dotenv').config();
+require("dotenv").config();
 
 const port = process.env.PORT ?? 5000;
 
@@ -96,7 +96,7 @@ Module de dev simple dédié au relancement du serveur à chaque save
 Doc [ici](https://www.npmjs.com/package/nodemon)
 
 ```bash
-# Installer nodemon 
+# Installer nodemon
 npm i nodemon
 
 # Lancer nodemon
@@ -107,9 +107,9 @@ Ligne a ajouter dans `package.json`
 
 ```json
 {
-    "scripts": {
-        "dev": "nodemon server.js",
-    }
+  "scripts": {
+    "dev": "nodemon server.js"
+  }
 }
 ```
 
@@ -123,17 +123,17 @@ Doc [ici](https://jsdoc.app/)
 
 ```js
 /**
-* Fonction qui fait rien de special
-* @param {*} req récupere les paramètres dans l'url et l'affiche dans le terminal
-* @param {*} res renvoie un simple "hello"
-*/
+ * Fonction qui fait rien de special
+ * @param {*} req récupere les paramètres dans l'url et l'affiche dans le terminal
+ * @param {*} res renvoie un simple "hello"
+ */
 function toto(req, res) {
-    /**
-    * Recupere les parametres "/?name=..."
-    */
-    const params = req.params.name;
-    console.log(params);
-    res.send("hello");
+  /**
+   * Recupere les parametres "/?name=..."
+   */
+  const params = req.params.name;
+  console.log(params);
+  res.send("hello");
 }
 ```
 
@@ -161,22 +161,22 @@ const app = express();
 const expressJSDocSwagger = require("express-jsdoc-swagger");
 
 const options = {
-    info: {
-        version: "1.0.0", // version a personnaliser
-        title: "nom-du-projet",
-        license: {
-            name: "MIT",
-        },
+  info: {
+    version: "1.0.0", // version a personnaliser
+    title: "nom-du-projet",
+    license: {
+      name: "MIT",
     },
-    security: {
-        BasicAuth: {
-            type: "http",
-            scheme: "basic",
-        },
+  },
+  security: {
+    BasicAuth: {
+      type: "http",
+      scheme: "basic",
     },
-    swaggerUIPath: "/tata&toto", // url où se trouve la doc
-    baseDir: __dirname,
-    filesPattern: "./**/*.js",
+  },
+  swaggerUIPath: "/tata&toto", // url où se trouve la doc
+  baseDir: __dirname,
+  filesPattern: "./**/*.js",
 };
 
 expressJSDocSwagger(app)(options);
@@ -186,19 +186,19 @@ Dans le router créer une JSDoc adapté à swagger
 
 ```js
 /**
-* Une categories
-* @typedef {Object} Categories
-* @property {number} id - id
-* @property {string} category - Description d'une categorie
-*/
+ * Une categories
+ * @typedef {Object} Categories
+ * @property {number} id - id
+ * @property {string} category - Description d'une categorie
+ */
 
 /**
-* GET /api/categories
-* @summary Get all categories
-* @tags GET
-* @return {[Category]} 200 - success response - application/json
-* @return {object} 400 - Bad request response
-*/
+ * GET /api/categories
+ * @summary Get all categories
+ * @tags GET
+ * @return {[Category]} 200 - success response - application/json
+ * @return {object} 400 - Bad request response
+ */
 router.get("/categories", categoriesController.getAll);
 
 /**
@@ -232,7 +232,7 @@ Dans un fichier random :
 const debug = require("debug")("nomFichier");
 
 function sayHello(toto) {
-    debug(toto);
+  debug(toto);
 }
 
 sayHello("hello");
@@ -249,7 +249,7 @@ Ou dans le `package.json`
 
 ```json
 "scripts": {
-    "dev": "DEBUG='toto, nomFichier, tata' node server.js"
+  "dev": "DEBUG='toto, nomFichier, tata' node server.js"
 },
 ```
 
@@ -260,6 +260,7 @@ $ npm run dev
 
 toto hello +0ms
 ```
+
 ---
 
 ## Session
@@ -272,30 +273,32 @@ npm i express-session
 On set la session dans l'index du server
 
 ```js
-app.use(session({ // on se sert des sessions pour appeller un cookie qui va suivre le visiteur
+app.use(
+  session({
+    // on se sert des sessions pour appeller un cookie qui va suivre le visiteur
     secret: "le secret est secret il peut être placé dans le .env", // on mets un secret au piff
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: false, // false = http true = https
-    }
-}));
+      secure: false, // false = http true = https
+    },
+  })
+);
 
-app.use((req, res, next) => { // on defini ce qui se trouve dans l'objet de session
-    if (!req.session.idSearch) {
-        req.session.idSearch = 0;
-    }
-    next();
+app.use((req, res, next) => {
+  // on defini ce qui se trouve dans l'objet de session
+  if (!req.session.idSearch) {
+    req.session.idSearch = 0;
+  }
+  next();
 });
 ```
 
 ---
 
-## 
+##
 
 ```js
-
-
 
 ```
 

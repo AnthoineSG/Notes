@@ -355,43 +355,43 @@ La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions
 
 ```js
 // Exemple pour vérifier une plaque d'immatriculation française
-'/^((?!(SS|WW))[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})\-((?!000)\d{3})\-((?!SS)[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})$/'
+'/^((?!(SS|WW))[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})\-((?!000)\d{3})\-((?!SS)[^IOUa-z\d@&"()!_$*€£`+=\/;?#]{2})$/';
 
 // Pour déclarer une regex
-'^ $'
+"^ $";
 
 // Pour interdire quelque chose
-'(?!k)' // Interdit la lettre k en minuscule
-'(?!(k|L))' // Interdit la lettre k minuscule ou la lettre L majuscule
+"(?!k)"; // Interdit la lettre k en minuscule
+"(?!(k|L))"; // Interdit la lettre k minuscule ou la lettre L majuscule
 
 // Pour interdire plusieur choses
-'[^Abc!§]'
+"[^Abc!§]";
 
 // Pour forcer un caractere
-'\-'
-'\.'
-'\?'
+"\-";
+"\.";
+"\?";
 
 // Pour limiter la chaine de caracteres
-'{2,3}' // Cette chaine de caracteres aura 2 ou 3 carac
-'a*' // Donne rien ou aaaaaaaaaaaaaaaaa
-'a+' // Donne un a ou aaaaaaaaaaaaaaaaa
-'a?' // Donne un a ou rien
-'.' // Accepte autant de caracter possible
+"{2,3}"; // Cette chaine de caracteres aura 2 ou 3 carac
+"a*"; // Donne rien ou aaaaaaaaaaaaaaaaa
+"a+"; // Donne un a ou aaaaaaaaaaaaaaaaa
+"a?"; // Donne un a ou rien
+"."; // Accepte autant de caracter possible
 
 // Pour regrouper des éléments (organisation)
-'((?!b)[a-d]{3})' // = acd
+"((?!b)[a-d]{3})"; // = acd
 
 // Pour regrouper tout les caractères
-'[a-z]' // = a, b, c, ... , z
-'[A-Z]' // = A, B, C, ... , Z
-'[0-9]' // = 0, 1, 2, ... , 9
-'\w' // = [a-zA-Z0-9_]
-'\d' // = [0-9]
+"[a-z]"; // = a, b, c, ... , z
+"[A-Z]"; // = A, B, C, ... , Z
+"[0-9]"; // = 0, 1, 2, ... , 9
+"\w"; // = [a-zA-Z0-9_]
+"\d"; // = [0-9]
 
 // Petits plus
-'\s' // sauter une ligne
-'\b' // fin d'un mots
+"\s"; // sauter une ligne
+"\b"; // fin d'un mots
 ```
 
 ---
@@ -402,7 +402,7 @@ Eslint permet d'analyser le code écrit et de corriger les potentielles erreurs 
 
 Doc [ici](https://eslint.org/demo)
 
-Pour l'installer en global sur sa machine 
+Pour l'installer en global sur sa machine
 
 ```bash
 npm i -g eslint
@@ -414,28 +414,28 @@ Pour un fichier config de base
 
 ```json
 {
-    "extends": "eslint:recommended",
+  "extends": "eslint:recommended",
 
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module"
-    },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
 
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
 
-    "rules": {
-        "indent": ["error", 4],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "camelcase": "error",
-        "no-var": "error",
-        "no-multi-spaces": "error",
-        "no-trailing-spaces": "error"
-    }
+  "rules": {
+    "indent": ["error", 4],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "camelcase": "error",
+    "no-var": "error",
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": "error"
+  }
 }
 ```
 
@@ -455,22 +455,22 @@ Il fait un `package.json` spécifique
 
 ```json
 {
-    "scripts": {
-        "build": "tsc", // npm run build pour lancer la compilation
-        "start": "node dist/index.js", // npm start pour demarer le server en déploiement
-        "dev": "nodemon ./index.ts" // npm run dev nodemon compile ts sans passer par build
-    },
-    "dependencies": {
-        "express": "^4.18.1",
-        "typescript": "^4.7.2"
-    },
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.27.0",
-        "@typescript-eslint/parser": "^5.27.0",
-        "@types/express": "^4.17.13",
-        "nodemon": "^2.0.16",
-        "ts-node": "^10.8.0"
-    }
+  "scripts": {
+    "build": "tsc", // npm run build pour lancer la compilation
+    "start": "node dist/index.js", // npm start pour demarer le server en déploiement
+    "dev": "nodemon ./index.ts" // npm run dev nodemon compile ts sans passer par build
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "typescript": "^4.7.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.0"
+  }
 }
 ```
 
@@ -478,28 +478,25 @@ Un `.eslint.json` qui lit TypeScript
 
 ```json
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 2020,
-        "sourceType": "module"
-    },
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "rules": {
-        "@typescript-eslint/indent": ["error", 4],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "no-multi-spaces": "error",
-        "no-trailing-spaces": "error"
-    }
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/indent": ["error", 4],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": "error"
+  }
 }
 ```
 
@@ -507,19 +504,17 @@ Un fichier `tsconfig.json` qui permet la compilation des fichiers ts en js
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "outDir": "dist", // les fichiers compilés seront mis dans un dossier "dist"
-        "sourceMap": true
-    },
-    "files": [
-        "./index.ts", // list des fichier ts à compiler
-        "./app/router.ts",
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist", // les fichiers compilés seront mis dans un dossier "dist"
+    "sourceMap": true
+  },
+  "files": [
+    "./index.ts", // list des fichier ts à compiler
+    "./app/router.ts"
+  ],
+  "exclude": ["node_modules"]
 }
 ```
 
@@ -530,29 +525,25 @@ import * as express from "express";
 
 const app = express();
 
+app.get("/", (req, res) => {
+  interface ReceivedMessage {
+    content: string;
+    pseudo: string;
+  }
 
-app.get("/", (req, res) => { 
+  async function saveMessage(message: ReceivedMessage) {
+    const savedMessage = message;
+    console.log("chat", savedMessage.content);
+  }
 
-    interface ReceivedMessage {
-        content: string;
-        pseudo: string;
-    }
+  saveMessage({ content: "to", pseudo: "to" });
 
-    async function saveMessage(message: ReceivedMessage) {
-        const savedMessage = message;
-        console.log("chat", savedMessage.content);
-    }
-
-    saveMessage({ content: "to", pseudo: "to" });
-
-
-    res.send("trop hype");
+  res.send("trop hype");
 });
-
 
 const PORT = process.env.PORT ?? 8000;
 app.listen(PORT, () => {
-    console.log(`server start on http://localhost:${PORT}`);
+  console.log(`server start on http://localhost:${PORT}`);
 });
 ```
 

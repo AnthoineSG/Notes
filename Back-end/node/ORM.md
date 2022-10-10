@@ -22,17 +22,14 @@ Pour ce connecter a une DB avec `sequelize` :
 ```js
 const Sequelize = require("sequelize");
 
-function getConnexion() {  // 
-    return new Sequelize(
-        "postgres://user:password@localhost/database",
-        {
-            define: {
-                createdAt: "created_at",
-                updatedAt: "updated_at",
-            },
-            logging: true,
-        }
-    );
+function getConnexion() {
+  return new Sequelize("postgres://user:password@localhost/database", {
+    define: {
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+    },
+    logging: true,
+  });
 }
 
 module.exports = getConnexion;
@@ -47,32 +44,32 @@ const sequelize = require("./getConnexion")();
 class Product extends Model {}
 
 Product.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            unique: true,
-            autoIncrement: true,
-            primaryKey: true,
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        created_at: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: literal("CURRENT_TIMESTAMP"),
-        },
-        updated_at: {
-            type: DataTypes.DATE,
-            allowNull: true,
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      unique: true,
+      autoIncrement: true,
+      primaryKey: true,
     },
-    {
-        sequelize: sequelize,
-        tableName: "product",
-        modelName: "Product",
-    }
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: literal("CURRENT_TIMESTAMP"),
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+  },
+  {
+    sequelize: sequelize,
+    tableName: "product",
+    modelName: "Product",
+  }
 );
 
 module.exports = Product;
@@ -85,18 +82,18 @@ const Product = require("./product");
 const User = require("./user");
 
 Product.belongsTo(User, {
-    foreignKey: "user_id",
-    as: "user",
+  foreignKey: "user_id",
+  as: "user",
 });
 
 User.hasMany(Product, {
-    foreignKey: "user_id",
-    as: "products",
+  foreignKey: "user_id",
+  as: "products",
 });
 
 module.exports = {
-    Product,
-    User,
+  Product,
+  User,
 };
 ```
 
@@ -106,18 +103,18 @@ Pour l'utilliser :
 const { Product } = require("../models");
 
 async function getAllProduct(req, res) {
-    try {
-        const allProduct = await Product.findAll();
+  try {
+    const allProduct = await Product.findAll();
 
-        res.render("product", {
-            products: allProduct,
-        });
-    } catch (err) {
-        console.error(err);
-    }
+    res.render("product", {
+      products: allProduct,
+    });
+  } catch (err) {
+    console.error(err);
+  }
 }
 
-module.exports = { getAllProduct, };
+module.exports = { getAllProduct };
 ```
 
 ---
@@ -135,7 +132,7 @@ npm i mongoose
 Pour la connection avec mongoDB
 
 ```js
-mongoose.connect('mongodb://localhost:27017/nom-BDD');
+mongoose.connect("mongodb://localhost:27017/nom-BDD");
 ```
 
 Crée un model
@@ -144,10 +141,10 @@ Crée un model
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
+  name: {
+    type: String,
+    required: true,
+  },
 });
 
 const User = mongoose.model("User", userSchema);
@@ -159,12 +156,12 @@ Pour requêter
 
 ```js
 app.get("/users", async (req, res) => {
-    const users = await userModel.find({});
-    try {
-        res.send(users);
-    } catch (error) {
-        res.status(500).send(error);
-    }
+  const users = await userModel.find({});
+  try {
+    res.send(users);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 ```
 
