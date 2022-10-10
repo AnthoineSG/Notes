@@ -1,20 +1,29 @@
 # Notes
 
-Ce document est realisé pour ***Linux*** et ***Windows***
+Ce document est realisé pour **_Linux_** et **_Windows_**
 
 ---
 
 ## Environement
 
-- [VSCode](./Environement/env.md#vscode)
-- [Architecture](./Environement/env.md#architecture)
-- [Bash](./Environement/env.md#bash)
-- [Git](./Environement/env.md#git)
-- [Tree](./Environement/env.md#tree)
-- [Docker](./Environement/env.md#docker)
-- [Regex](./Environement/env.md#regex)
-- [Eslint](./Environement/env.md#eslint)
-- [TypeScript](./Environement/env.md#typescript)
+- [VSCode](/Environement/env.md#vscode)
+- [Architecture](/Environement/architecture.md)
+- [Docker](/Environement/env.md#docker)
+- [Regex](/Environement/regex.md)
+- Commandes
+  - [Bash](/Environement/cmd.md#bash)
+  - [Git](/Environement/cmd.md#git)
+  - [Tree](/Environement/cmd.md#tree)
+- Linter
+  - [Eslint](/Environement/linter.md#eslint)
+  - [Tslint](/Environement/linter.md#tslint)
+- [TypeScript](/Environement/typescript.md)
+  - [Config](/Environement/typescript.md#typescript-nécessite-une-configuration-pour-être-utilisé)
+- [Securiter](/Environement/securite.md)
+  - [Failles XSS](/Environement/securite.md#failles-xss)
+  - [Injection SQL](/Environement/securite.md#injection-sql)
+  - [Attaques CSRF](/Environement/securite.md#attaques-csrf)
+  - [Man in the middle](/Environement/securite.md#man-in-the-middle)
 
 ---
 
@@ -23,8 +32,8 @@ Ce document est realisé pour ***Linux*** et ***Windows***
 - [Strapi](./Back-end/back.md#strapi)
 - [Sqitch](./Back-end/back.md#sqitch)
 - [Ejs](./Back-end/back.md#ejs)
-- **Node**
-  - **Modules de base**
+- Node
+  - Modules de base
     - [NodeJS](./Back-end/node/modulesDeBase.md#nodejs-1)
     - [Express](./Back-end/node/modulesDeBase.md#express)
     - [Dotenv](./Back-end/node/modulesDeBase.md#dotenv)
@@ -33,7 +42,7 @@ Ce document est realisé pour ***Linux*** et ***Windows***
     - [Swagger](./Back-end/node/modulesDeBase.md#swagger)
     - [Debug](./Back-end/node/modulesDeBase.md#debug)
     - [Session](./Back-end/node/modulesDeBase.md#session)
-  - **Autres**
+  - Autres
     - [Joi](./Back-end/node/autres.md#joi)
     - [Bcrypt](./Back-end/node/autres.md#bcrypt)
     - [Dayjs](./Back-end/node/autres.md#dayjs)
@@ -42,13 +51,13 @@ Ce document est realisé pour ***Linux*** et ***Windows***
     - [Cron](./Back-end/node/autres.md#cron)
     - [Multer](./Back-end/node/autres.md#multer)
     - [Formidable](./Back-end/node/autres.md#formidable)
-  - **Module pour DB**
+  - Module pour DB
     - [PG](./Back-end/node/modulesDB.md#pg)
     - [Mongodb](./Back-end/node/modulesDB.md#mongodb)
-  - **ORM**
-    - [Sequelize](./Back-end/node/ORM.md#sequelize)
-    - [Mongoose](./Back-end/node/ORM.md#mongoose)
-  - **BDD**
+  - ORM et ODM
+    - [Sequelize](/Back-end/node/ORM_ODM.md#sequelize)
+    - [Mongoose](/Back-end/node/ORM_ODM.md#mongoose)
+  - BDD
     - [PostgresQL](./Back-end/BDD.md#poqtgresql)
     - [MongoDB](./Back-end/BDD.md#mongodb)
 
@@ -56,9 +65,28 @@ Ce document est realisé pour ***Linux*** et ***Windows***
 
 ## Front
 
-- [HTML](./Front-end/front.md#html)
-- [CSS](./Front-end/front.md#css)
-- [JSVanilla](./Front-end/front.md#js-vanilla)
-- [React](./Front-end/front.md#react)
+- [HTML](/Front-end/integration.md#html)
+- [CSS](/Front-end/integration.md#css)
+- [JSVanilla](/Front-end/integration.md#js-vanilla)
+- React
+  - [Composants](/Front-end/react/component.md)
+    - [Root de l'application](/Front-end/react/component.md#index-root)
+    - [Composant principal](/Front-end/react/component.md#app-ou-composant-principal)
+    - [Sous-composant](/Front-end/react/component.md#sous-composant)
+  - [Routes](/Front-end/react/routes.md)
+    - [Mise en place](/Front-end/react/routes.md#mise-en-place-du-router)
+    - [Gestion des routes](/Front-end/react/routes.md#gestion-des-routes)
+    - [NavLink et Link](/Front-end/react/routes.md#navlink-et-link)
+    - [useParams](/Front-end/react/routes.md#useparams)
+    - [useNavigate](/Front-end/react/routes.md#usenavigate)
+    - [useLocation](/Front-end/react/routes.md#uselocation)
+  - [State](/Front-end/react/state.md)
+  - [Redux](/Front-end/react/redux.md)
+    - [Mise en place](/Front-end/react/redux.md#mise-en-place-de-redux)
+    - [Reducer](/Front-end/react/redux.md#reducer)
+    - [Actions](/Front-end/react/redux.md#actions)
+    - [Middlewares](/Front-end/react/redux.md#middlewares)
+    - [Selectos](/Front-end/react/redux.md#selectos)
+    - [Connect](/Front-end/react/redux.md#connect)
 
 ---

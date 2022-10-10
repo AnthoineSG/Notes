@@ -123,7 +123,7 @@ tableau.forEach((nbr) => {
   console.log(nbr);
 });
 
-const trouver = tableau.find((nbr) => (nbr = 4));
+const trouver = tableau.find((nbr) => (nbr = 4)); // 4
 
 const pourChaque = tableau.map((nbr) => nbr / 3); // [3, 6, 9, ...]
 
@@ -139,14 +139,6 @@ const obj = {
   },
 };
 console.log(obj.fonction(toto));
-```
-
----
-
-##
-
-```js
-
 ```
 
 ---

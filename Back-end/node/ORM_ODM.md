@@ -121,7 +121,7 @@ module.exports = { getAllProduct };
 
 ## Mongoose
 
-Mongoose est un ORM qui utilise une base de donnés MongoDB, il marche comme `sequelize` et consomme tout autant
+Mongoose est un ODM qui utilise une base de donnés MongoDB, il marche comme `sequelize` et consomme tout autant
 
 Doc [ici](https://mongoosejs.com/docs/guide.html)
 

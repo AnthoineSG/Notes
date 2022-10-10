@@ -262,3 +262,9 @@ export default dataMiddleware;
 ```
 
 ---
+
+## Selectos
+
+## Connect
+
+![Redux](/assets/images/redux/redux_connect.png)
