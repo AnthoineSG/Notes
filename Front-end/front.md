@@ -143,7 +143,7 @@ console.log(obj.fonction(toto));
 
 ---
 
-## React
+##
 
 ```js
 
