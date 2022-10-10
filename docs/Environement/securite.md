@@ -8,9 +8,9 @@ Les failles XSS on pour principe de placer du code malveilant dans des formulair
 
 Pour sens prevenir il faut mettre en place des verification des formulaire en front comme en back (et meme en BDD) de nombreux module existe pour renforcer le filtrage des formulaire mais une simple echapement des caractere avant de les stocker en base de données suffie pour eviter d'introduire des balise HTML ou des scripts
 
-![Secu](/assets/images/securiter/schema_faille_XSS.png)
+![XSS principe](/assets/images/securiter/schema_faille_XSS.png)
 
-![Secu](/assets/images/securiter/schema_faille_XSS-2.png)
+![XSS comment](/assets/images/securiter/schema_faille_XSS-2.png)
 
 ---
 
@@ -30,7 +30,7 @@ Ajout d'element malveiant sur l'application comme par exemple un popup avec marq
 
 Pour eviter ses attaques mettre en place des cookie secret avec JWT par exemple
 
-![Secu](/assets/images/securiter/JWT_signature.png)
+![modification pour ce faire passer pour quelqu'un d'autre](/assets/images/securiter/JWT_signature.png)
 
 ---
 
@@ -42,6 +42,6 @@ A et B parlent et C tape une incruste et parle a B
 
 Pour eviter ses attaques mettre en place des cors sur le serveur pour autoriser seulement certain nom de domaine a requeter l'API
 
-![Secu](/assets/images/securiter/cors_origin.png)
+![cros origin](/assets/images/securiter/cors_origin.png)
 
 ---

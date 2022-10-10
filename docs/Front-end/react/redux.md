@@ -10,7 +10,7 @@ Avec redux classique on a acces a 3 methodes
 - `store.dispatch({ ... })` : pour effectuer une action
 - `store.subscribe(() => { ... })` : pour effectuer un rendu a chaque fois qu'une valeur du state change
 
-![Redux](/assets/images/redux/Redux.png)
+![Redux principe](/assets/images/redux/Redux.png)
 
 ---
 
@@ -21,7 +21,7 @@ Le module `react-redux` offre des hooks simplifier pour effecter la gestion du s
 
 A chaque mise a jour du state, `react-redux` effectue un nouveau rendu
 
-![Redux](/assets/images/redux/Redux_communication.png)
+![Redux communication](/assets/images/redux/Redux_communication.png)
 
 ---
 
@@ -203,7 +203,7 @@ const store = createStore(reducer, enhancers);
 export default store;
 ```
 
-![Redux](/assets/images/redux/Redux_Mw_principe.png)
+![Redux middleware principe](/assets/images/redux/Redux_Mw_principe.png)
 
 ---
 
@@ -211,9 +211,9 @@ A chaque rendu de l'application les Mw seront traverser
 
 Si une action est capter dans un Mw une action sera effectuer et une nouvelle action sera créé a la suite
 
-![Redux](/assets/images/redux/React-Redux_Principe_middleware.png)
+![Redux requetes](/assets/images/redux/React-Redux_Principe_middleware.png)
 
-![Redux](/assets/images/redux/Redux_Mw_discution.png)
+![Redux discussion](/assets/images/redux/Redux_Mw_discution.png)
 
 ---
 
@@ -267,4 +267,4 @@ export default dataMiddleware;
 
 ## Connect
 
-![Redux](/assets/images/redux/redux_connect.png)
+![Redux connect](/assets/images/redux/redux_connect.png)
