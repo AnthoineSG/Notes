@@ -1,10 +1,10 @@
 # Git Commandes
 
-La gestion de cette outil est tres importante car GitHub est avant tout un outil colaboratif donc un bon historique est primordial pour que :
+La gestion de cette outil est très importante car GitHub est avant tout un outil collaboratif donc un bon historique est primordial pour que :
 
-- tout les utilisateurs puisse si retrouver facilement
+- tout les utilisateurs puissent s'y retrouver facilement
 - que la maintenence soit simple
-- que la lecture soit agreable pour tous
+- que la lecture soit agréable pour tous
 
 ---
 
@@ -12,21 +12,21 @@ La gestion de cette outil est tres importante car GitHub est avant tout un outil
 
 ### Git config
 
-Pour mettre en place une liaison entre Git et GitHub, la premiere etape est de configurer son environement en liant git a l'adresse mail du profil GitHub pour que les actions realiser soit associée au profils :
+Pour mettre en place une liaison entre Git et GitHub, la première étape est de configurer son environnement en liant Git à l'adresse mail du profil GitHub pour que les actions realisées soient associées aux profils :
 
 ```bash
 git config --global user.email [valid-email]
 # git config --global user.email totoDu33@toto.fr
 ```
 
-Dans un meme temps metre en place le nom de l'utilisateur
+Dans un même temps mettre en place le nom de l'utilisateur
 
 ```bash
 git config --global user.name "[firstname lastname]"
 # git config --global user.name "Toto Du33”
 ```
 
-On peut en plus definir des fichier que git ignorera automatiquement
+On peut en plus définir des fichiers que Git ignorera automatiquement
 
 > ⚠️ _Toujours penser au `.gitignore` pour les autres utilisateurs_
 
@@ -37,7 +37,7 @@ git config --global core.excludesfile '[file]'
 
 ### Git init
 
-Pour relier un nouveau projet a Git ce qui crera un dossier masquer `.git` qut contiendra toutes les informations (commit, branch, historique, ...)
+Pour relier un nouveau projet à Git ce qui créera un dossier masqué `.git` qut contiendra toutes les informations (commit, branch, historique, ...)
 
 ```bash
 git init
@@ -47,7 +47,7 @@ git init
 
 ### Git clone
 
-Pour **recuperer** un repo GitHub sur la machine local, je copie le chemin jusqu'a la racine du repo
+Pour **recuperer** un repo GitHub sur la machine local, je copie le chemin jusqu'à la racine du repo
 
 ```bash
 git clone [url ou SSH]
@@ -58,13 +58,13 @@ git clone [url ou SSH]
 
 Cette commande permet d'**ajouter des fichier** au repo GitHub
 
-Pour ajouter `tout` les fichier :
+Pour ajouter `tout` les fichiers :
 
 ```bash
 git add .
 ```
 
-Pour ajouter `un/des` fichiers specifique
+Pour ajouter `un/des` fichier(s) spécifique(s)
 
 ```bash
 git add [my_file]
@@ -73,7 +73,7 @@ git add [my_file1] [my_file2] [...]
 
 ### Git commit
 
-Apres avoir ajouter un ou plusieur fichier le commit permet de **crée un paquet** de ses fichier et d'ajouter un message de description
+Apres avoir ajouté un ou plusieurs fichier(s) le commit permet de **créer un paquet** de ses fichier et d'ajouter un message de description
 
 > Plus il y a de commit mieux c'est : l'historique GitHub est maintenu a jour
 
@@ -85,7 +85,7 @@ git commit [my_file1] -m "Description du commit"
 
 ### Git push
 
-Cette commande **permet d'envoyer** toute les modification local sur le repo GitHub
+Cette commande **permet d'envoyer** toute les modifications locales sur le repo GitHub
 
 > habitude classique :
 >
@@ -94,28 +94,28 @@ Cette commande **permet d'envoyer** toute les modification local sur le repo Git
 > - git push
 
 ```bash
-# pour cree une branch existante en local et envoyer sont contenue sur un repo GitHub
+# pour créer une branche existante en local et envoyer son contenu sur un repo GitHub
 git push --set-upstream [remote] [branch]
 
-# pour envoyer le contenue sur une branch specifique
+# pour envoyer le contenu sur une branche spécifique
 git push [remote] [branch]
 
-# une fois que les branch local et GitHub sont relier un simple push suffit
+# une fois que les branches locales et GitHub sont reliés, un simple push suffit
 git push
 ```
 
 ### Git pull
 
-Pour **mettre a jour sont repo** local avec toutes les modification qui on eu lieu sur GitHub
+Pour **mettre à jour son repo** local avec toutes les modifications qui ont eu lieu sur GitHub
 
-Cette commande met ajour toutes les branch et remote disponible
+Cette commande met à jour toutes les branches et remote disponibles
 
 > - branch A et B en local
 > - branch C sur GitHub
 > - git pull
->   - branch A, B et C disponible en local
+>   - branch A, B et C disponibles en local
 >
-> Cette operation est a faire tres frequament quand on travaille en groupe sur un meme repo pour ne pas avoir des difference d'historique (a combiner avec une bonne utilisation des branches)
+> Cette opération est à faire tres fréquemment quand on travaille en groupe sur un même repo pour ne pas avoir des differences d'historique (à combiner avec une bonne utilisation des branches)
 
 ```bash
 git pull
@@ -126,33 +126,33 @@ git pull [remote]
 
 ### Git branch
 
-Les branch permette de separrer le travaille effectuer et donc mieux s'**oganiser**
+Les branches permettent de séparer le travail effectué et donc mieux s'**oganiser**
 
 > - branch **A** je fais des truc
-> - je crée une branch **B** depuis la branch **A**
-> - je casse tout sur la branch **B**
->   - je me replace sur la branch **A**
->   - et je suppime la branch **B**
-> - la branch **A** est rester intacte
+> - je crée une branche **B** depuis la branche**A**
+> - je casse tout sur la branche **B**
+>   - je me replace sur la branche **A**
+>   - et je supprime la branche **B**
+> - la branche **A** est restée intacte
 
-Pour `voir` toutes les branch
+Pour `voir` toutes les branches
 
 ```bash
-# Les branch en local
+# Les branches en local
 git branch
 
-# Toutes les branch et remotes relier
+# Toutes les branches et remotes reliées
 git branch -a
 ```
 
-Pour `crée` une nouvelle branch a partire de la branch actuel
+Pour `créer` une nouvelle branche à partir de la branche actuelle
 
 ```bash
 git branch [nom_branche]
-# Donc a l'initaition branch A === branch B
+# Donc à l'initiation branch A === branch B
 ```
 
-Pour `supprimer` une branch
+Pour `supprimer` une branche
 
 ```bash
 git branch –d [nom_branche]
@@ -163,7 +163,7 @@ git branch -D [nom_branche]
 
 ### Git checkout
 
-Comme la commande `git branch` cette commande permet une gestion des branch legerement diferente
+Comme la commande `git branch` cette commande permet une gestion des branches légèrement différente
 
 Pour `cree` une nouvelle branche
 
@@ -172,7 +172,7 @@ git checkout [nom_branche]
 
 ```
 
-Pour `cree` une nouvelle branche et ce **placer dessus** directment
+Pour `cree` une nouvelle branche et se **placer dessus** directement
 
 ```bash
 git checkout -b [nom_branche]
@@ -180,19 +180,19 @@ git checkout -b [nom_branche]
 
 ### Recap des branches Git
 
-Personnelement j'ai pour habitude de separer les commande en fonction de ce que je veux faire
+Personnelement j'ai pour habitude de séparer les commandes en fonction de ce que je veux faire
 
 ```bash
-# voir toutes les branch et remotes
+# voir toutes les branches et remotes
 git branch -a
 
-# crée et se placer sur une nouvelle branch
+# crée et se placer sur une nouvelle branche
 git checkout -b [nom_branch]
 
-# changer de branch
+# changer de branche
 git switch [nom_branch]
 
-# supprimer une branch
+# supprimer une branche
 git branch -d [nom_branch]
 
 # merge sur GitHub directement
@@ -200,11 +200,11 @@ git branch -d [nom_branch]
 
 ### Git merge
 
-Cette operation permet de **fusionner** une branche sur une branche active
+Cette opération permet de **fusionner** une branche sur une branche active
 
-⚠️ _Cette operation a reliser de preference sur GitHub directement pour des raison de lisibiliter et d'historique plus claire_
+⚠️ _Cette opération à réaliser de préférence sur GitHub directement pour des raisons de lisibilité et d'historique plus clair_
 
-> branch B est a merge sur branch A
+> branch B est à merge sur branch A
 >
 > - placement sur branch A
 > - git merge branch B
@@ -217,9 +217,9 @@ git merge [branch]
 
 ### Git remote
 
-Commande permetant d'**ajouter une connexion** a un repo distant
+Commande permettant d'**ajouter une connexion** a un repo distant
 
-`Voir` toutes les connexion
+`Voir` toutes les connexions
 
 ```bash
 git remote –v
@@ -240,37 +240,37 @@ git remote rm [nom_remote]
 
 ---
 
-## Commande precise
+## Commande précise
 
 ### Git diff
 
-Cette commande permet de voir les different **conflit** sur une branche ou entre plusieurs
+Cette commande permet de voir les différents **conflits** sur une branche ou entre plusieurs
 
-Elle met en surbrilance les differences dans le terminal
+Elle met en surbrillance les différences dans le terminal
 
-Les options VSC permette les visualiser directement dans l'editeur de texte
+Les options VSC permettent de les visualiser directement dans l'éditeur de texte
 
-GitHub permet de voir l'historique des commit directement sur le repo et donne acces a des options supplementaire
+GitHub permet de voir l'historique des commit directement sur le repo et donne accès a des options supplementaires
 
-Pour `voir` tout les conflit du projet
+Pour `voir` tout les conflits du projet
 
 ```bash
 git diff
 ```
 
-Pour `voir` les conflit d'un fichier precis
+Pour `voir` les conflits d'un fichier précis
 
 ```bash
 git diff --base [nom_file]
 ```
 
-Pour `voir` les conflit de deux branch avant de les merge
+Pour `voir` les conflits de deux branches avant de les merge
 
 ```bash
 git diff [branch_A] [branch_B]
 ```
 
-Pour `voir` les conflit pas encore commit
+Pour `voir` les conflits pas encore commit
 
 ```bash
 git diff --staged
@@ -278,29 +278,29 @@ git diff --staged
 
 ### Git log
 
-Cette commande permet de connaitre l'**historique des commit** d'un repo
+Cette commande permet de connaître l'**historique des commit** d'un repo
 
-Pour voir tout les commit d'une branch et obtenir les information lie (qui, ou et quand)
+Pour voir tous les commit d'une branche et d'obtenir les informatiosn liées (qui, où et quand)
 
-GitHub propose la meme option en plus detailler
+GitHub propose la même option en plus détaillée
 
 ```bash
 git log
 ```
 
-Pour `voir` les commit different entre deux branch
+Pour `voir` les commit differents entre deux branches
 
 ```bash
 git log [branch_B] [branch_A]
 ```
 
-Pour `voir` les commit qui on concerner un fichier precis
+Pour `voir` les commit qui ont concerné un fichier précis
 
 ```bash
 git log --follow [mon_file]
 ```
 
-Pour avoir `TOUTES` les information des commit
+Pour avoir `TOUTES` les informations des commit
 
 ```bash
 git log --stat -M
@@ -308,7 +308,7 @@ git log --stat -M
 
 ### Git status
 
-Pour connaitre les fichier qui on ete modifier et qui ne sont **pas encore commit**
+Pour connaître les fichiers qui ont été modifiés et qui ne sont **pas encore commit**
 
 ```bash
 git status
@@ -324,25 +324,25 @@ gitk
 
 ### Git reset
 
-⚠️ _ATTENTION COMMANDE TRES RISQUER ET IRREVERSIBLE_
+⚠️ _ATTENTION COMMANDE TRES RISQUEE ET IRREVERSIBLE_
 
-> il est preferer utiliser l'onglet "Source Control" de VSC
+> il est préferable d'utiliser l'onglet "Source Control" de VSC
 
-Cette commande permet de revenir a l'**etat initial** a partire d'un commit ou du dernier commit
+Cette commande permet de revenir à l'**état initial** à partir d'un commit ou du dernier commit
 
-Pour `réinitialiser` toute l'arborescence a partir du **dernier commit**
+Pour `réinitialiser` toute l'arborescence à partir du **dernier commit**
 
 ```bash
 git reset --hard HEAD
 ```
 
-Pour `réinitialiser` un fichier a partir du **dernier commit**
+Pour `réinitialiser` un fichier à partir du **dernier commit**
 
 ```bash
 git reset [nom_file]
 ```
 
-Pour `réinitialiser` toute l'arborescence a partir d'**un commit** precis
+Pour `réinitialiser` toute l'arborescence à partir d'**un commit** précis
 
 ```bash
 git reset --hard [num_commit]
@@ -354,7 +354,7 @@ git reset --hard [num_commit]
 
 ### Git tag
 
-Cette commande permet de **gerer** les tag
+Cette commande permet de **gérer** les tag
 
 Pour `voir` tout les tag
 
@@ -368,7 +368,7 @@ Pour `ajouter` un tag
 git tag -a [v1.4] -m "Description du tag"
 ```
 
-Pour `afficher` les information lie a un tag
+Pour `afficher` les informations liées à un tag
 
 ```bash
 git show [v1.4]
@@ -390,27 +390,27 @@ git rm [nom_file]
 
 ### Git stash
 
-Cette commande permet d'**enregistrer les fichier localement** sans les commit (pour garder un historique propre)
+Cette commande permet d'**enregistrer les fichiers localement** sans les commit (pour garder un historique propre)
 
-Pour `enregistrer` les changement
-
-```bash
-git stash
-```
-
-Pour `voir` la liste des changement
+Pour `enregistrer` les changements
 
 ```bash
 git stash
 ```
 
-Pour `ecraser` les changement
+Pour `voir` la liste des changements
+
+```bash
+git stash
+```
+
+Pour `ecraser` les changements
 
 ```bash
 git stash pop
 ```
 
-Pour `supprimer` les changement avant de commit
+Pour `supprimer` les changements avant de commit
 
 ```bash
 git stash drop
@@ -418,13 +418,13 @@ git stash drop
 
 ### Git show
 
-Pour `afficher` toutes les informations lier au fichier du repo
+Pour `afficher` toutes les informations liées au fichier du repo
 
 ```bash
 git show
 ```
 
-Pour `voir` les informations d'un commit precis de façon lisible
+Pour `voir` les informations d'un commit précis de façon lisible
 
 ```bash
 git show [num_commit]
@@ -440,7 +440,7 @@ git ls-tree HEAD
 
 ### Git grep
 
-Moteur de recherche de Git pour `rechercher un mot ou une phrase` dans tout les fichier
+Moteur de recherche de Git pour `rechercher un mot ou une phrase` dans tout les fichiers
 
 ```bash
 git grep "[mot_rechercher]"
