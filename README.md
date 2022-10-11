@@ -24,6 +24,11 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
   - [Injection SQL](/docs/Environement/securite.md#injection-sql)
   - [Attaques CSRF](/docs/Environement/securite.md#attaques-csrf)
   - [Man in the middle](/docs/Environement/securite.md#man-in-the-middle)
+- [Git](/docs/Environement/git.md)
+  - [Mise en place](/docs/Environement/git.md#mise-en-place)
+  - [Commandes de base](/docs/Environement/git.md#commande-de-gestion-de-projet)
+  - [Commandes precise](/docs/Environement/git.md#commande-precise)
+  - [Commandes bonus](/docs/Environement/git.md#moins-important)
 
 ---
 
