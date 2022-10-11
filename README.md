@@ -12,8 +12,12 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
 - [Regex](/docs/Environement/regex.md)
 - [Commandes](/docs/Environement/cmd.md)
   - [Bash](/docs/Environement/cmd.md#bash)
-  - [Git](/docs/Environement/cmd.md#git)
   - [Tree](/docs/Environement/cmd.md#tree)
+  - [Git](/docs/Environement/git.md)
+    - [Mise en place](/docs/Environement/git.md#mise-en-place)
+    - [Commandes de base](/docs/Environement/git.md#commande-de-gestion-de-projet)
+    - [Commandes precise](/docs/Environement/git.md#commande-precise)
+    - [Commandes bonus](/docs/Environement/git.md#moins-important)
 - [Linter](/docs/Environement/linter.md)
   - [Eslint](/docs/Environement/linter.md#eslint)
   - [Tslint](/docs/Environement/linter.md#tslint)
@@ -24,11 +28,6 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
   - [Injection SQL](/docs/Environement/securite.md#injection-sql)
   - [Attaques CSRF](/docs/Environement/securite.md#attaques-csrf)
   - [Man in the middle](/docs/Environement/securite.md#man-in-the-middle)
-- [Git](/docs/Environement/git.md)
-  - [Mise en place](/docs/Environement/git.md#mise-en-place)
-  - [Commandes de base](/docs/Environement/git.md#commande-de-gestion-de-projet)
-  - [Commandes precise](/docs/Environement/git.md#commande-precise)
-  - [Commandes bonus](/docs/Environement/git.md#moins-important)
 
 ---
 
