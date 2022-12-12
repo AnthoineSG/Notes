@@ -1,8 +1,8 @@
 # REGEX
 
-Outils sympas pour écrire des regex [ici](https://regex101.com/)
+Outils sympas pour écrire des regex [ici (regex101)](https://regex101.com/)
 
-La doc [ici](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+La doc [ici (Cheat Sheet)](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
 
 ```js
 // Exemple pour vérifier une plaque d'immatriculation française

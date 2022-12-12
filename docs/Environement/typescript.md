@@ -4,7 +4,7 @@
 
 Les navigateurs ne lisent pas Ts il faut donc compiler ces fichiers pour les transformer en Js
 
-Doc [ici](https://www.typescriptlang.org/docs/)
+Doc [ici (TypeScript Documentation)](https://www.typescriptlang.org/docs/)
 
 ## TypeScript nécessite une configuration pour être utilisé
 

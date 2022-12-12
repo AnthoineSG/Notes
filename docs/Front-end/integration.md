@@ -2,7 +2,7 @@
 
 ## HTML
 
-Plus d'info [ici](https://htmlcheatsheet.com/)
+Plus d'info [ici (HTML CheatSheet)](https://htmlcheatsheet.com/)
 
 ```html
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ Plus d'info [ici](https://htmlcheatsheet.com/)
 
 ## CSS
 
-Plus d'info [ici](https://www.reveillere.fr/M2WEB/sheets/css.pdf) ou [la](https://htmlcheatsheet.com/css/)
+Plus d'info [ici (sheets)](https://www.reveillere.fr/M2WEB/sheets/css.pdf) ou [la (CSS CheatSheet)](https://htmlcheatsheet.com/css/)
 
 ```css
 /* Selectionner une balise */
@@ -101,17 +101,28 @@ La bible c'est la [MDN](https://developer.mozilla.org/fr/)
 
 ```js
 // Les variable
-const toto = true;
-let tata = 10;
-tata = "string";
+const bool = true;
+const string = "true";
+let number = 10;
+number = "string";
+```
 
+```js
 // Les fonction
-async function faiDesTruc(toto) {
+async function faiDesTruc(string) {
+  const attend = await truc;
+  return attend;
+// ou
+const faiDesTruc = async (string) => {
   const attend = await truc;
   return attend;
 }
-faiDesTruc(toto);
 
+// Appelle de fonction
+faiDesTruc(string);
+```
+
+```js
 // Les array
 const tableau = [1, 2, 3, 4, 5, 6];
 
@@ -119,26 +130,51 @@ for (const nbr of tableau) {
   console.log(nbr);
 }
 
-tableau.forEach((nbr) => {
+const oneByOne = tableau.forEach((nbr) => {
   console.log(nbr);
 });
 
-const trouver = tableau.find((nbr) => (nbr = 4)); // 4
+const returnItem = tableau.find((nbr) => (nbr = 4)); // 4
 
-const pourChaque = tableau.map((nbr) => nbr / 3); // [3, 6, 9, ...]
+const updateAllItemsInArray = tableau.map((nbr) => nbr / 3); // [3, 6, 9, ...]
 
-const filtre = tableau.filter((nbr) => nbr <= 2); // [1, 2]
+const returnNewArray = tableau.filter((nbr) => nbr <= 2); // [1, 2]
 
 tableau.sort(); // range le tableau par ordre alphabétique ou numerique
+
+const p = "La superbe phrase.";
+
+p.replace(" ", ", "); // La, superbe, phrase.
+```
+
+```js
+const bigObject = {
+  success: true,
+
+  array: [
+    { id: 1, name: "toto" },
+    { id: 2, name: "tata" },
+    { id: 3, name: "tutu" },
+  ],
+
+  object: {
+    id: 1,
+    name: "toto",
+  },
+
+  function: () => {
+    return 1;
+  },
+};
 
 // Les objet
 const obj = {
   key: "value",
-  fonction(params) {
+  fonction: (params) => {
     return params;
   },
 };
-console.log(obj.fonction(toto));
+console.log(obj.fonction(string));
 ```
 
 ---

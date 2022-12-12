@@ -4,7 +4,7 @@
 
 Eslint permet d'analyser le code écrit et de corriger les potentielles erreurs de syntaxe
 
-Doc [ici](https://eslint.org/demo)
+Doc [ici (Eslint)](https://eslint.org/demo)
 
 Pour l'installer en global sur sa machine
 
@@ -42,9 +42,3 @@ Pour un fichier config de base
   }
 }
 ```
-
----
-
-## TsLint
-
----

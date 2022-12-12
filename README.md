@@ -20,7 +20,6 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
     - [Commandes bonus](/docs/Environement/git.md#moins-important)
 - [Linter](/docs/Environement/linter.md)
   - [Eslint](/docs/Environement/linter.md#eslint)
-  - [Tslint](/docs/Environement/linter.md#tslint)
 - [TypeScript](/docs/Environement/typescript.md)
   - [Config](/docs/Environement/typescript.md#typescript-nécessite-une-configuration-pour-être-utilisé)
 - [Securiter](/docs/Environement/securite.md)
