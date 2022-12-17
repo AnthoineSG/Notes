@@ -40,6 +40,7 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
   - [Ejs](/docs/Back-end/view_engine.md#ejs)
   - [Pug](/docs/Back-end/view_engine.md#pug)
 - [GraphQL](/docs/Back-end/graphql.md)
+- [Looping](/docs/Back-end/looping.md)
 - Node
   - Modules de base
     - [NodeJS](/docs/Back-end/node/modulesDeBase.md#nodejs-1)
