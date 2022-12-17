@@ -14,7 +14,7 @@ npm i -g eslint
 
 Installer l'extension vscode eslint
 
-Pour un fichier config de base back
+### Pour un fichier config de base back
 
 ```json
 {
