@@ -14,7 +14,7 @@ npm i -g eslint
 
 Installer l'extension vscode eslint
 
-Pour un fichier config de base
+Pour un fichier config de base back
 
 ```json
 {
@@ -32,8 +32,8 @@ Pour un fichier config de base
   },
 
   "rules": {
-    "indent": ["error", 4],
-    "quotes": ["error", "double"],
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "camelcase": "error",
     "no-var": "error",
