@@ -10,7 +10,7 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
 - [Architecture](/docs/Environement/architecture.md)
 - [Docker](/docs/Environement/env.md#docker)
 - [Regex](/docs/Environement/regex.md)
-- [JSDoc](/docs/Back-end/node/modulesDeBase.md#jsdoc)
+- [JSDoc](/docs/Environement/jsdocs.md)
 - [GraphQL](/docs/Environement/graphQL.md)
 - [Commandes](/docs/Environement/cmd.md)
   - [Bash](/docs/Environement/cmd.md#bash)
