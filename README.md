@@ -4,10 +4,6 @@ Ce document est realisé pour **_Linux_** et **_Windows_**
 
 ---
 
-generer une chaine de caractere en 64 bytes
-
-require('crypto').randomBytes(64).toString('hex')
-
 ## Environement
 
 - [VSCode](/docs/Environement/env.md#vscode)

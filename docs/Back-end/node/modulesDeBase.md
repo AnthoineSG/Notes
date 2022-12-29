@@ -272,10 +272,12 @@ app.use((req, res, next) => {
 
 ---
 
-##
+## JsonWebToken
+
+Pour generer une chaine de caractere en 64 bytes dans un terminal `node`
 
 ```js
-
+require("crypto").randomBytes(64).toString("hex");
 ```
 
 ---
