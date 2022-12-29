@@ -79,9 +79,9 @@ require('crypto').randomBytes(64).toString('hex')
 
 ## Front
 
-- [HTML](/docs/Front-end/integration.md#html)
-- [CSS](/docs/Front-end/integration.md#css)
-- [JSVanilla](/docs/Front-end/integration.md#js-vanilla)
+- [HTML](/docs/Front-end/html.md)
+- [CSS](/docs/Front-end/css.md)
+- [JSVanilla](/docs/Front-end/jsVanilla.md)
 - React
   - [Composants](/docs/Front-end/react/component.md)
     - [Root de l'application](/docs/Front-end/react/component.md#index-root)
