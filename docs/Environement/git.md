@@ -8,6 +8,12 @@ La gestion de cette outil est très importante car GitHub est avant tout un outi
 
 ---
 
+git config --global core.editor "code --wait"
+
+git rebase -i HEAD~100
+
+---
+
 ## Mise en place
 
 ### Git config
