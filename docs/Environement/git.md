@@ -8,9 +8,15 @@ La gestion de cette outil est très importante car GitHub est avant tout un outi
 
 ---
 
-git config --global core.editor "code --wait"
+Pour `git rebase -i HEAD~100`
 
-git rebase -i HEAD~100
+```bash
+git config --global core.editor "code --wait"
+```
+
+Pour intaller les var d'environement de vsc
+
+`cdm + shift + p` => Shell Command: Install 'code' command in PATH
 
 ---
 
