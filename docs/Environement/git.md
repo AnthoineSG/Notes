@@ -8,6 +8,15 @@ La gestion de cette outil est très importante car GitHub est avant tout un outi
 
 ---
 
+### Renommer un les commit
+
+Cette commande permet de changer les auteurs des commit en fonction la config global
+
+```bash
+git -c rebase.instructionFormat='%s%nexec GIT_COMMITTER_DATE="%cD" GIT_AUTHOR_DATE="%aD" git commit --amend --no-edit --reset-author' rebase -f --root
+# possibiliter de changer --root par le sha ou HEAD~n
+```
+
 Pour `git rebase -i HEAD~100`
 
 ```bash
